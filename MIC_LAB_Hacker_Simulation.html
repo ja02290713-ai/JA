@@ -1,0 +1,828 @@
+<!DOCTYPE html><html lang="zh-Hant"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MIC LAB 聲創實驗室｜AI 智慧購物與免排隊結帳概念商店。">
+  <meta name="theme-color" content="#f7f6f3">
+  <title>MIC LAB. 聲創實驗室｜創作者收音選購指南</title>
+
+  <style>:root { --bg: rgb(247,246,243); --surface: rgb(255,255,255); --dark: rgb(32,36,43); --text: rgb(37,39,43); --muted: rgb(119,123,130); --accent: rgb(239,116,76); --line: rgb(232,230,225); --radius: 18px; }* { box-sizing: border-box; margin: 0; padding: 0; }html {  }body { font-family: "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }a { color: inherit; text-decoration: none; }button, input { font: inherit inherit inherit inherit inherit inherit inherit; }button { cursor: pointer; }img { display: block; width: 100%; object-fit: cover; }.container { width: min(calc(1160px), calc(90%)); margin: auto; }.trust-strip { background: rgb(32, 36, 43); color: rgb(255, 255, 255); font-size: 12px; letter-spacing: 0.2px; }.trust-strip .container { min-height: 38px; display: flex; justify-content: center; align-items: center; text-align: center; padding: 7px 0 7px 0; }.trust-note { margin-top: 18px; color: rgb(104, 107, 112); font-size: 12px; max-width: 650px; }.guide-section { padding: 64px 0 64px 0; }.guide-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 26px; }.guide-card { background: rgb(255, 255, 255); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }.guide-index { color: rgb(182, 91, 61); font-size: 12px; font-weight: 800; letter-spacing: 1.5px; margin-bottom: 14px; }.guide-card h3 { font-size: 18px; margin-bottom: 9px; }.guide-card p { color: var(--muted); font-size: 14px; }.trust-panel { margin-top: 30px; background: rgb(239, 237, 231); border-radius: var(--radius); padding: 25px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }.trust-panel h3 { font-size: 17px; margin-bottom: 8px; }.trust-panel p, .trust-panel li { color: rgb(98, 101, 107); font-size: 13px; }.trust-panel ul { padding-left: 19px; }.faq-list { margin-top: 22px; border: 1px solid var(--line); }.faq-list details { padding: 18px 0 18px 0; border: 1px solid var(--line); }.faq-list summary { cursor: pointer; font-weight: 700; }.faq-list details p { color: var(--muted); font-size: 14px; padding-top: 10px; max-width: 820px; }a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible { outline: 3px solid rgb(214, 108, 72); }.footer-notice { margin-top: 12px; color: rgb(174, 177, 182); font-size: 12px; max-width: 850px; }@media (max-width: 760px) { .guide-grid { grid-template-columns: 1fr; }.trust-panel { grid-template-columns: 1fr; }.trust-strip .container { min-height: 44px; } }header { top: 0; z-index: 10; background: rgba(247, 246, 243, 0.96); border: 1px solid var(--line); }.navbar { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }.logo { font-size: 25px; font-weight: 900; letter-spacing: -1px; white-space: nowrap; }.logo span { color: var(--accent); }.nav-links { display: flex; align-items: center; gap: 27px; font-size: 14px; }.nav-links a:hover { color: var(--accent); }.nav-actions { display: flex; align-items: center; gap: 12px; }.icon-button { border: 1px solid var(--line); background: var(--surface); border-radius: 50px; padding: 9px 13px 9px 13px; color: var(--dark); }.cart-count { display: inline-grid; min-width: 20px; height: 20px; border-radius: 50%; background: var(--accent); color: white; font-size: 11px; margin-left: 4px; }.search-panel { display: none; padding: 0 0 18px 0; }.search-panel.active { display: block; }.search-panel input { width: 100%; padding: 13px 16px 13px 16px; border: 1px solid var(--line); border-radius: 12px; background: white; outline-color: var(--accent); }.hero { padding: 64px 0 48px 0; }.hero-inner { min-height: 440px; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; border-radius: 26px; background: rgb(233, 230, 223); }.hero-copy { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }.eyebrow { color: rgb(182, 91, 61); font-size: 12px; font-weight: 800; letter-spacing: 3px; margin-bottom: 18px; }.hero h1 { line-height: 1.3; letter-spacing: -1.5px; margin-bottom: 18px; }.hero p { color: rgb(98, 101, 107); max-width: 390px; font-size: 15px; margin-bottom: 28px; }.button { display: inline-flex; justify-content: center; align-items: center; gap: 10px; border: 0; border-radius: 9px; padding: 13px 23px 13px 23px; background: var(--dark); color: white; font-size: 14px; font-weight: 700; transition-property: transform, background; transition-duration: 0.2s, 0.2s; }.button:hover { background: var(--accent); transform: translateY(-2px); }.button-light { background: white; color: var(--dark); border: 1px solid var(--line); }.hero-visual { position: relative; min-height: 350px; background: rgb(217, 212, 202); }.hero-visual img { height: 100%; min-height: 350px; }.hero-label { position: absolute; right: 20px; bottom: 20px; padding: 10px 15px 10px 15px; background: rgba(255, 255, 255, 0.9); border-radius: 9px; font-size: 12px; font-weight: 700; }section { padding: 48px 0 48px 0; }.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 25px; }.section-heading h2 { letter-spacing: -0.8px; }.section-heading p { color: var(--muted); font-size: 13px; margin-top: 5px; }.text-link { font-size: 13px; font-weight: 700; white-space: nowrap; }.text-link:hover { color: var(--accent); }.category-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }.category-card { overflow: hidden; border-radius: var(--radius); background: var(--surface); transition-property: transform, box-shadow; transition-duration: 0.25s, 0.25s; }.category-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgb(32, 36, 43); }.category-card img { height: 175px; transition: transform 0.35s initial initial; }.category-card:hover img { transform: scale(1.04); }.category-info { padding: 17px; }.category-info h3 { font-size: 16px; margin-bottom: 4px; }.category-info p { font-size: 12px; color: var(--muted); }.product-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 23px; }.filter-button { border: 1px solid var(--line); background: white; border-radius: 30px; padding: 8px 16px 8px 16px; font-size: 12px; transition: all 0.2s initial initial; }.filter-button.active, .filter-button:hover { background: var(--dark); color: white; : ; border-top-color: ; border-right-color: ; border-bottom-color: ; border-left-color: ; }.product-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }.product-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition-property: box-shadow, transform; transition-duration: 0.2s, 0.2s; }.product-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgb(32, 36, 43); }.product-image { position: relative; background: rgb(238, 236, 231); overflow: hidden; }.product-image img { height: 245px; transition: transform 0.3s initial initial; }.product-card:hover .product-image img { transform: scale(1.035); }.product-tag { position: absolute; top: 13px; left: 13px; padding: 5px 10px 5px 10px; border-radius: 6px; background: white; font-size: 11px; font-weight: 700; }.product-info { padding: 20px; }.product-category { color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: 1px; }.product-info h3 { font-size: 17px; margin: 5px 0 5px 0; }.product-desc { color: var(--muted); font-size: 12px; min-height: 42px; }.product-bottom { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: 18px; }.price { font-size: 19px; font-weight: 900; }.add-button { border: 0; border-radius: 8px; padding: 10px 12px 10px 12px; background: var(--dark); color: white; font-size: 12px; font-weight: 700; }.add-button:hover { background: var(--accent); }.empty-state { display: none; padding: 30px; text-align: center; color: var(--muted); }.feature-panel { background: var(--dark); color: white; border-radius: 24px; }.feature-panel .section-heading p { color: rgb(192, 195, 201); }.feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 28px; }.feature-item { border-top: 1px solid; padding-top: 20px; }.feature-number { color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: 2px; }.feature-item h3 { font-size: 18px; margin: 10px 0 10px 0; }.feature-item p { color: rgb(192, 195, 201); font-size: 13px; }.cta { text-align: center; padding: 55px 20px 55px 20px; }.cta h2 { margin-bottom: 12px; }.cta p { color: var(--muted); font-size: 14px; margin-bottom: 23px; }footer { background: rgb(32, 36, 43); color: white; padding: 40px 0 22px 0; }.footer-main { display: flex; justify-content: space-between; gap: 30px; flex-wrap: wrap; padding-bottom: 28px; }.footer-main p { color: rgb(185, 190, 197); font-size: 12px; margin-top: 8px; }.footer-links { display: flex; gap: 22px; flex-wrap: wrap; font-size: 12px; color: rgb(211, 213, 217); }.footer-bottom { border-top: 1px solid; padding-top: 17px; color: rgb(157, 163, 172); font-size: 11px; }.toast { position: fixed; left: 50%; bottom: 28px; z-index: 30; transform: translate(-50%, 20px); opacity: 0; pointer-events: none; background: var(--dark); color: white; padding: 12px 20px 12px 20px; border-radius: 10px; font-size: 13px; box-shadow: 0 8px 25px rgb(0, 0, 0); transition: all 0.25s initial initial; }.toast.show { opacity: 1; transform: translate(-50%, 0); }a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--accent); }@media (max-width: 900px) { .nav-links { gap: 13px; font-size: 12px; flex-wrap: wrap; }.category-grid { grid-template-columns: repeat(2, 1fr); }.product-grid { grid-template-columns: repeat(2, 1fr); }.hero-inner { grid-template-columns: 1fr 1fr; }.hero-copy { padding: 30px; } }@media (max-width: 600px) { .navbar { min-height: 65px; gap: 10px; }.logo { font-size: 22px; }.nav-links { display: none; }.hero { padding-top: 25px; }.hero-inner { grid-template-columns: 1fr; }.hero-copy { padding: 32px 25px 32px 25px; }.hero-visual, .hero-visual img { min-height: 230px; max-height: 270px; }section { padding: 32px 0 32px 0; }.category-grid { gap: 12px; }.category-card img { height: 130px; }.category-info { padding: 12px; }.category-info h3 { font-size: 14px; }.product-grid { grid-template-columns: 1fr; gap: 16px; }.product-image img { height: 260px; }.feature-grid { grid-template-columns: 1fr; gap: 20px; }.section-heading { align-items: flex-start; }.footer-main { flex-direction: column; } }@media not all { *, *::before, *::after { transition: none initial initial initial !important; } }:root { --bg: rgb(8,13,22); --surface: rgb(16,25,39); --dark: rgb(234,242,247); --text: rgb(237,243,248); --muted: rgb(154,169,184); --accent: rgb(103,245,210); --line: rgb(38,52,69); --radius: 10px; }body { background: var(--bg); color: var(--text); }.trust-strip { background: var(--accent); color: rgb(7, 17, 26); font-weight: 800; letter-spacing: 0.4px; }header { background: rgba(8, 13, 22, 0.94); border-bottom: 1px solid rgb(38, 52, 69); }.logo { letter-spacing: -1.5px; font-size: 28px; }.logo span { color: var(--accent); }.nav-links a { color: rgb(197, 208, 219); }.nav-links a:hover, .text-link:hover { color: var(--accent); }.icon-button { background: rgb(17, 29, 43); color: rgb(237, 243, 248); border: rgb(48, 65, 84); border-radius: 6px; }.cart-count { background: var(--accent); color: rgb(6, 17, 26); }.search-panel input { background: rgb(17, 29, 43); color: rgb(237, 243, 248); border: rgb(48, 65, 84); border-radius: 6px; }.hero { padding: 38px 0 34px 0; }.hero-inner { min-height: 510px; border-radius: 4px; background: rgb(16, 25, 39); border: 1px solid rgb(38, 52, 69); grid-template-columns: 1.02fr 0.98fr; }.hero-copy {  }.eyebrow { color: var(--accent); letter-spacing: 3.5px; font-size: 11px; }.hero h1 { line-height: 1.12; letter-spacing: -2.5px; font-weight: 900; }.hero p { color: rgb(175, 189, 202); font-size: 15px; max-width: 420px; }.button { background: var(--accent); color: rgb(7, 17, 26); border-radius: 5px; padding: 14px 22px 14px 22px; }.button:hover { background: rgb(176, 255, 233); color: rgb(7, 17, 26); }.button-light { background: transparent; color: var(--text); border: rgb(58, 75, 94); }.hero-visual { min-height: 510px; background: rgb(13, 21, 33); border-left: 1px solid rgb(38, 52, 69); }.hero-visual img { min-height: 510px; }.hero-label { right: 18px; bottom: 18px; background: var(--accent); color: rgb(7, 17, 26); border-radius: 3px; }.trust-note { color: rgb(127, 145, 162); font-size: 12px; }section { padding: 62px 0 62px 0; }.section-heading { align-items: end; border: 3px solid var(--accent); padding-left: 18px; margin-bottom: 28px; }.section-heading h2 { color: rgb(243, 247, 251); letter-spacing: -1px; }.section-heading p { color: rgb(154, 169, 184); }.text-link { color: var(--accent); }.category-grid { gap: 14px; }.category-card { background: rgb(16, 25, 39); border: 1px solid rgb(38, 52, 69); border-radius: 5px; }.category-card:hover { box-shadow: 0 16px 34px rgb(0, 0, 0); border: rgb(103, 245, 210); }.category-card img {  }.category-info { padding: 19px; }.category-info h3 { color: rgb(241, 246, 250); font-size: 17px; }.category-info p { color: rgb(154, 169, 184); }#products { background: rgb(12, 19, 31); border-top: 1px solid rgb(31, 44, 59); border-bottom: 1px solid rgb(31, 44, 59); }.product-toolbar { gap: 8px; }.filter-button { background: rgb(17, 29, 43); color: rgb(200, 212, 223); border: rgb(48, 65, 84); border-radius: 4px; padding: 9px 15px 9px 15px; }.filter-button.active, .filter-button:hover { background: var(--accent); color: rgb(7, 17, 26); : ; border-top-color: ; border-right-color: ; border-bottom-color: ; border-left-color: ; }.product-grid { gap: 16px; }.product-card { background: rgb(17, 27, 41); border: rgb(38, 52, 69); border-radius: 5px; }.product-card:hover { box-shadow: 0 14px 30px rgb(0, 0, 0); border: rgb(64, 87, 108); }.product-image { background: rgb(24, 36, 51); }.product-image img {  }.product-tag { background: var(--accent); color: rgb(7, 17, 26); border-radius: 3px; }.product-category { color: var(--accent); }.product-info h3 { color: rgb(242, 246, 250); }.product-desc { color: rgb(154, 169, 184); }.price { color: rgb(244, 248, 251); font-size: 16px; }.add-button { background: transparent; color: var(--accent); border: 1px solid rgb(59, 109, 102); border-radius: 4px; padding: 10px 13px 10px 13px; }.add-button:hover { background: var(--accent); color: rgb(7, 17, 26); }.empty-state { color: rgb(154, 169, 184); }.guide-section { background: rgb(8, 13, 22); }.guide-card { background: rgb(16, 25, 39); border: rgb(38, 52, 69); border-radius: 5px; }.guide-index { color: var(--accent); }.guide-card h3, .trust-panel h3 { color: rgb(240, 245, 249); }.guide-card p, .trust-panel p, .trust-panel li { color: rgb(160, 175, 189); }.trust-panel { background: rgb(17, 29, 43); border: 1px solid rgb(38, 52, 69); border-radius: 5px; }.faq-list { border: rgb(38, 52, 69); }.faq-list details { border: rgb(38, 52, 69); }.faq-list summary { color: rgb(237, 243, 248); }.faq-list details p { color: rgb(160, 175, 189); }.feature-panel { background: rgb(17, 29, 43); border: 1px solid rgb(38, 52, 69); border-radius: 5px; }.feature-panel .section-heading p { color: rgb(154, 169, 184); }.feature-item { border: rgb(52, 69, 87); }.feature-item h3 { color: rgb(240, 245, 249); }.feature-item p { color: rgb(160, 175, 189); }.feature-number { color: var(--accent); }.cta { background: rgb(103, 245, 210); color: rgb(7, 17, 26); margin: 20px auto 50px auto; max-width: 1160px; padding: 55px 20px 55px 20px; }.cta h2 { color: rgb(7, 17, 26); }.cta p { color: rgb(35, 62, 66); }.cta .button { background: rgb(7, 17, 26); color: rgb(237, 243, 248); }.cta .button:hover { background: rgb(32, 51, 67); }footer { background: rgb(5, 9, 16); border-top: 1px solid rgb(38, 52, 69); }.footer-main p, .footer-links { color: rgb(160, 175, 189); }.footer-bottom { border: rgb(38, 52, 69); color: rgb(113, 130, 148); }.footer-notice { color: rgb(127, 145, 162); }.toast { background: var(--accent); color: rgb(7, 17, 26); border-radius: 5px; font-weight: 700; }a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible { outline: 3px solid rgb(103, 245, 210); }@media (max-width: 900px) { .hero-inner { min-height: 420px; }.hero-visual, .hero-visual img { min-height: 420px; } }@media (max-width: 600px) { .hero { padding-top: 22px; }.hero-inner { border-radius: 4px; }.hero h1 { font-size: 43px; }.hero-visual, .hero-visual img { min-height: 240px; max-height: 280px; }.cta { margin: 10px 5% 35px 5%; }.trust-strip { font-size: 11px; } }.price { font-weight: 800; color: var(--accent); font-size: 18px; }.checkout-backdrop { display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(10, 18, 28, 0.62); padding: 20px; overflow: auto; }.checkout-backdrop.open { display: flex; align-items: flex-start; justify-content: center; }.checkout-modal { position: relative; width: min(calc(680px), calc(100%)); margin: 4vh auto 4vh auto; padding: 28px; background: var(--surface,rgb(255,255,255)); color: var(--text,rgb(23,32,43)); border-radius: 18px; box-shadow: 0 20px 80px rgb(0, 0, 0); }.modal-close { position: absolute; right: 16px; top: 12px; border: 0; background: transparent; font-size: 30px; cursor: pointer; }.demo-notice { background: rgb(255, 244, 214); color: rgb(105, 75, 0); border-radius: 8px; padding: 10px 12px 10px 12px; font-size: 13px; line-height: 1.6; }.cart-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0 14px 0; border: 1px solid var(--line,rgb(221,221,221)); }.cart-row p { margin: 6px 0 0 0; color: rgb(105, 117, 134); font-size: 14px; }.qty-controls { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }.qty-controls button { border: 1px solid rgb(204, 210, 216); border-radius: 6px; background: transparent; padding: 5px 10px 5px 10px; cursor: pointer; }.qty-controls .remove-item { border: 0; color: rgb(170, 51, 51); }.cart-total { display: flex; justify-content: space-between; padding: 18px 0 18px 0; font-size: 18px; }.full-button { width: 100%; margin: 12px 0 12px 0; }#checkoutForm label { display: block; font-weight: 600; margin: 12px 0 12px 0; }#checkoutForm input:not([type=radio]), #checkoutForm select { display: block; width: 100%; margin-top: 6px; border: 1px solid rgb(203, 208, 213); border-radius: 8px; padding: 12px; font: inherit inherit inherit inherit inherit inherit inherit; box-sizing: border-box; }#checkoutForm .payment-option { font-weight: 400; }.order-success { padding: 12px 0 12px 0; }[hidden] { display: none !important; }@media (max-width: 900px) { .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }@media (max-width: 600px) { .product-grid { grid-template-columns: 1fr; }.checkout-modal { padding: 22px 16px 22px 16px; }.cart-row { align-items: flex-start; flex-direction: column; } }.halloween-campaign { position: relative; overflow: hidden; margin: 18px auto 34px auto; border: 1px solid rgb(105, 65, 108); color: rgb(255, 247, 237); box-shadow: 0 18px 45px rgb(0, 0, 0); }.halloween-campaign::before { content: "✦  ☾  ✦"; position: absolute; right: 24px; top: 12px; color: rgb(255, 173, 85); font-size: 25px; letter-spacing: 10px; opacity: 0.9; pointer-events: none; }.halloween-kicker { color: rgb(255, 173, 85); font-size: 12px; font-weight: 900; letter-spacing: 3px; margin-bottom: 10px; }.halloween-campaign h2 { line-height: 1.2; margin-bottom: 12px; color: rgb(255, 247, 237); }.halloween-campaign .campaign-intro { color: rgb(216, 201, 223); max-width: 700px; font-size: 14px; margin-bottom: 25px; }.halloween-feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 22px; }.halloween-feature { display: grid; grid-template-columns: 145px minmax(0, 1fr); gap: 18px; align-items: center; padding: 17px; background: rgb(255, 255, 255); border: 1px solid; border-radius: 8px; }.halloween-feature img { height: 155px; border-radius: 5px; object-fit: cover; }.halloween-feature .gift-tag { display: inline-block; margin-bottom: 8px; padding: 4px 8px 4px 8px; background: rgb(255, 173, 85); color: rgb(33, 19, 40); font-size: 10px; font-weight: 900; letter-spacing: 0.5px; }.halloween-feature h3 { color: rgb(255, 247, 237); font-size: 17px; margin-bottom: 7px; }.halloween-feature p { color: rgb(216, 201, 223); font-size: 12px; margin-bottom: 12px; }.halloween-feature .campaign-price { color: rgb(255, 189, 117); font-size: 17px; font-weight: 900; margin-bottom: 12px; }.halloween-feature .add-button { background: rgb(255, 173, 85); color: rgb(33, 19, 40); border: 0; }.halloween-feature .add-button:hover { background: rgb(255, 208, 155); }.halloween-terms { margin-top: 18px; color: rgb(196, 180, 206); font-size: 11px; }.halloween-spark { color: rgb(255, 173, 85); }@media (max-width: 760px) { .halloween-feature-grid { grid-template-columns: 1fr; }.halloween-feature { grid-template-columns: 110px minmax(0, 1fr); gap: 13px; padding: 12px; }.halloween-feature img { height: 145px; }.halloween-campaign::before { right: 12px; font-size: 18px; } }@media (max-width: 380px) { .halloween-feature { grid-template-columns: 1fr; }.halloween-feature img { height: 180px; } }:root { --bg: rgb(255,247,237); --surface: rgb(255,253,248); --dark: rgb(48,32,71); --text: rgb(48,32,71); --muted: rgb(117,103,125); --accent: rgb(255,122,53); --line: rgb(241,217,197); --radius: 22px; }body { background-color: rgb(255, 247, 237); color: rgb(48, 32, 71); }.trust-strip { background: rgb(57, 35, 77); color: rgb(255, 243, 223); }header { background: rgba(255, 247, 237, 0.94); border-bottom: 2px solid rgb(244, 215, 189); }.logo span, .product-category, .text-link { color: rgb(243, 110, 43); }.nav-links a { color: rgb(85, 66, 101); }.icon-button { background: rgb(255, 253, 248); color: rgb(57, 35, 77); border: rgb(241, 217, 197); border-radius: 999px; }.hero { padding-top: 28px; }.hero-inner { background: linear-gradient(135deg, rgb(255, 240, 216), rgb(244, 230, 255) 65%, rgb(255, 226, 200)); border: 2px solid rgb(243, 198, 159); border-radius: 30px; box-shadow: 0 16px 0 rgb(233, 199, 163); }.hero-copy {  }.eyebrow { color: rgb(233, 104, 39); background: rgb(255, 253, 248); padding: 7px 12px 7px 12px; border-radius: 999px; letter-spacing: 2px; }.hero h1 { color: rgb(56, 35, 77); }.hero p { color: rgb(102, 81, 110); }.hero-visual { background: rgb(248, 200, 143); border-left: 3px dashed rgb(216, 138, 71); }.hero-visual img {  }.hero-label { background: rgb(255, 139, 61); color: rgb(50, 28, 66); border-radius: 999px; box-shadow: 0 4px 0 rgb(212, 94, 45); }.button { background: rgb(255, 122, 53); color: rgb(255, 255, 255); border-radius: 999px; box-shadow: 0 4px 0 rgb(216, 91, 37); }.button:hover { background: rgb(232, 102, 39); color: rgb(255, 255, 255); }.button-light { background: rgb(255, 253, 248); color: rgb(57, 35, 77); }section {  }.section-heading { border-left: 5px solid rgb(255, 139, 61); padding-left: 16px; }.section-heading h2 { color: rgb(57, 35, 77); }.section-heading p { color: rgb(117, 103, 125); }.category-card, .product-card, .guide-card { background: rgb(255, 253, 248); border: 2px solid rgb(243, 221, 200); border-radius: 20px; box-shadow: 0 7px 0 rgb(240, 223, 207); }.category-card:hover, .product-card:hover { border: rgb(255, 154, 86); box-shadow: 0 10px 0 rgb(237, 196, 159); }.category-card img, .product-image img {  }.category-info h3, .product-info h3 { color: rgb(57, 35, 77); }.product-tag { background: rgb(255, 223, 139); color: rgb(84, 50, 77); border-radius: 999px; }.product-image { background: rgb(255, 232, 207); }#products { background: rgb(255, 240, 223); border-top: 2px dashed rgb(234, 196, 161); border-bottom: 2px dashed rgb(234, 196, 161); }.filter-button { background: rgb(255, 253, 248); color: rgb(89, 70, 101); border: rgb(235, 205, 180); border-radius: 999px; }.filter-button.active, .filter-button:hover { background: rgb(57, 35, 77); color: rgb(255, 255, 255); border: rgb(57, 35, 77); }.price { color: rgb(232, 102, 39); }.add-button { background: rgb(57, 35, 77); color: rgb(255, 255, 255); border-radius: 999px; }.add-button:hover { background: rgb(255, 122, 53); color: rgb(255, 255, 255); }.guide-section { background: rgb(255, 247, 237); }.guide-index, .feature-number { color: rgb(237, 112, 46); }.trust-panel { background: rgb(255, 240, 220); border: 2px dashed rgb(232, 193, 155); border-radius: 22px; }.feature-panel { background: rgb(57, 35, 77); border: 2px solid rgb(93, 58, 114); border-radius: 26px; }.feature-panel .section-heading h2, .feature-item h3 { color: rgb(255, 244, 229); }.feature-panel .section-heading p, .feature-item p { color: rgb(226, 211, 235); }.cta { background: rgb(255, 207, 119); color: rgb(57, 35, 77); border-radius: 28px; border: 2px solid rgb(243, 170, 85); box-shadow: 0 8px 0 rgb(229, 177, 107); }.cta h2 { color: rgb(57, 35, 77); }.cta p { color: rgb(97, 71, 108); }.cta .button { background: rgb(57, 35, 77); color: rgb(255, 255, 255); box-shadow: 0 4px 0 rgb(36, 21, 47); }footer { background: rgb(57, 35, 77); border-top: 5px solid rgb(255, 154, 69); }.footer-main p, .footer-links { color: rgb(241, 223, 239); }.footer-bottom { color: rgb(212, 193, 222); border: rgb(108, 80, 122); }.toast { background: rgb(255, 207, 119); color: rgb(57, 35, 77); border-radius: 999px; }.halloween-campaign { border: 3px solid rgb(255, 180, 94); border-radius: 28px; box-shadow: 0 10px 0 rgb(232, 197, 165); color: rgb(255, 247, 237); }.halloween-campaign h2 { text-shadow: 3px 3px 0 rgb(64, 36, 79); }.halloween-feature { background: rgb(255, 255, 255); border: 2px solid; border-radius: 18px; }.halloween-feature img { filter: none; }.halloween-feature .gift-tag { border-radius: 999px; }.halloween-terms { background: rgb(36, 22, 49); padding: 12px; border-radius: 12px; }.product-detail-actions { margin-top: 14px; }.detail-button { border: 2px solid rgb(239, 185, 142); background: rgb(255, 244, 232); color: rgb(106, 61, 104); padding: 8px 13px 8px 13px; border-radius: 999px; font-size: 12px; font-weight: 800; cursor: pointer; }.detail-button:hover { background: rgb(255, 224, 187); border: rgb(255, 139, 61); }.product-bottom { margin-top: 10px; }.detail-backdrop { display: none; position: fixed; inset: 0; z-index: 1200; background: rgb(33, 21, 45); padding: 18px; overflow: auto; align-items: center; justify-content: center; }.detail-backdrop.open { display: flex; }.detail-modal { position: relative; width: min(calc(760px), calc(100%)); max-height: 90vh; overflow: auto; background: rgb(255, 250, 243); color: rgb(57, 35, 77); border: 3px solid rgb(255, 180, 94); border-radius: 24px; box-shadow: 0 20px 80px rgb(23, 13, 32); }.detail-modal h2 { margin: 8px 42px 12px 0; }.detail-modal h3 { margin: 20px 0 8px 0; }.detail-modal p, .detail-modal li { color: rgb(102, 81, 110); font-size: 14px; }.detail-modal ul { padding-left: 22px; }.detail-modal .detail-label { display: inline-block; background: rgb(255, 226, 178); color: rgb(99, 61, 84); padding: 5px 10px 5px 10px; border-radius: 999px; font-size: 11px; font-weight: 900; }.detail-modal .modal-close { color: rgb(57, 35, 77); }.detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }.detail-box { background: rgb(255, 240, 223); border: 1px solid rgb(241, 210, 181); border-radius: 14px; padding: 15px; }.gift-showcase { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 24px 0 24px 0; }.gift-card { display: grid; grid-template-columns: 140px 1fr; gap: 16px; align-items: center; background: rgb(255, 248, 237); color: rgb(57, 35, 77); border: 2px dashed rgb(255, 180, 94); border-radius: 18px; padding: 14px; }.gift-card img { height: 140px; object-fit: contain; background: rgb(255, 240, 217); border-radius: 12px; }.gift-card h3 { font-size: 17px; margin: 5px 0 5px 0; }.gift-card p { font-size: 12px; color: rgb(117, 103, 125); }.gift-heading { margin-top: 30px; color: rgb(255, 242, 221); }@media (max-width: 760px) { .gift-showcase, .detail-grid { grid-template-columns: 1fr; }.gift-card { grid-template-columns: 110px 1fr; }.gift-card img { height: 120px; }.hero-inner { box-shadow: 0 8px 0 rgb(233, 199, 163); } }.promo-ad-backdrop { position: fixed; inset: 0; z-index: 3000; background: rgba(20, 12, 28, 0.68); display: none; align-items: center; justify-content: center; padding: 18px; }.promo-ad-backdrop.show { display: flex; }.promo-ad-card { position: relative; width: min(calc(520px), calc(100%)); overflow: visible; border: 4px solid rgb(255, 181, 54); border-radius: 28px; background: linear-gradient(145deg, rgb(255, 244, 223) 0%, rgb(255, 224, 174) 48%, rgb(255, 135, 62) 100%); box-shadow: 0 22px 80px rgb(22, 11, 44); text-align: center; color: rgb(56, 32, 77); padding: 22px 22px 24px 22px; }@keyframes promoPop{  }.promo-ad-close { position: absolute; right: -12px; top: -14px; width: 42px; height: 42px; border: 3px solid rgb(255, 255, 255); background: rgb(255, 255, 255); color: rgb(74, 49, 85); border-radius: 50%; font-size: 27px; line-height: 1; box-shadow: 0 4px 14px rgb(0, 0, 0); z-index: 2; }.promo-ad-kicker { display: inline-block; background: rgb(67, 38, 92); color: rgb(255, 255, 255); padding: 6px 15px 6px 15px; border-radius: 999px; font-weight: 900; font-size: 12px; letter-spacing: 1px; }.promo-ad-card h2 { line-height: 1.12; margin: 12px 0 5px 0; color: rgb(233, 78, 38); text-shadow: 1px 2px 0 rgb(255, 255, 255); }.promo-ad-card .promo-sub { font-weight: 800; color: rgb(84, 53, 94); font-size: 15px; }.promo-ad-art { width: 100%; max-width: 310px; height: 190px; margin: 8px auto 4px auto; display: block; }.promo-ad-price { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 8px 0 14px 0; }.promo-ad-price strong { color: rgb(223, 61, 32); line-height: 1; }.promo-ad-price del { color: rgb(128, 109, 124); font-size: 16px; }.promo-ad-bonus { background: rgb(255, 249, 239); border: 2px dashed rgb(237, 119, 52); border-radius: 14px; padding: 9px 12px 9px 12px; margin: 10px 0 14px 0; font-weight: 800; color: rgb(91, 58, 97); }.promo-ad-cta { width: 100%; border: 0; border-radius: 999px; padding: 14px 20px 14px 20px; background: linear-gradient(90deg, rgb(237, 75, 38), rgb(255, 138, 37)); color: rgb(255, 255, 255); font-weight: 900; font-size: 18px; box-shadow: 0 5px 0 rgb(184, 59, 36); }.promo-ad-dismiss { display: block; margin: 12px auto 0 auto; background: transparent; border: 0; color: rgb(113, 92, 112); text-decoration: underline; font-size: 13px; }.detail-product-hero { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 18px; align-items: center; margin: 14px 0 18px 0; }.detail-product-art { width: 100%; min-height: 190px; background: linear-gradient(145deg, rgb(255, 240, 217), rgb(255, 224, 189)); border-radius: 16px; padding: 10px; }.detail-price-panel { background: rgb(255, 240, 223); border: 1px solid rgb(241, 210, 181); border-radius: 15px; padding: 16px; }.detail-price-panel strong { display: block; font-size: 27px; color: rgb(228, 90, 43); }.detail-promo-line { font-size: 13px; font-weight: 800; color: rgb(90, 58, 101); margin-top: 7px; }@media (max-width: 560px) { .promo-ad-card { padding: 20px 16px 20px 16px; border-radius: 22px; }.promo-ad-art { height: 155px; }.detail-product-hero { grid-template-columns: 1fr; }.detail-product-art { min-height: 155px; } }.smart-store-section { padding: 76px 0 76px 0; background: linear-gradient(135deg, rgb(16, 24, 39) 0%, rgb(23, 36, 58) 55%, rgb(33, 27, 53) 100%); color: rgb(247, 244, 255); position: relative; overflow: hidden; }.smart-store-section::before { content: ""; position: absolute; width: 360px; height: 360px; border-radius: 50%; background: rgba(151, 112, 255, 0.13); top: -150px; right: -100px; pointer-events: none; }.smart-store-section .container { position: relative; z-index: 1; }.smart-kicker { display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px 7px 12px; border: 1px solid rgba(169, 151, 255, 0.4); border-radius: 99px; color: rgb(200, 187, 255); font-size: 12px; font-weight: 800; letter-spacing: 0.12em; }.smart-store-section h2 { color: rgb(255, 255, 255); margin: 16px 0 10px 0; }.smart-lead { max-width: 760px; color: rgb(195, 204, 218); line-height: 1.8; }.smart-demo-note { margin: 16px 0 26px 0; padding: 11px 14px 11px 14px; border-left: 3px solid rgb(247, 168, 75); background: rgba(255, 255, 255, 0.07); color: rgb(232, 229, 241); font-size: 13px; line-height: 1.7; }.smart-feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 28px; }.smart-panel { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(206, 216, 255, 0.17); border-radius: 20px; padding: 22px; box-shadow: 0 16px 45px rgba(0, 0, 0, 0.13); }.smart-panel h3 { color: rgb(255, 255, 255); font-size: 19px; margin: 0 0 8px 0; }.smart-panel p { color: rgb(197, 206, 222); font-size: 14px; line-height: 1.7; margin: 0 0 16px 0; }.smart-panel .smart-icon { width: 42px; height: 42px; border-radius: 13px; display: grid; background: rgba(164, 139, 255, 0.18); font-size: 22px; margin-bottom: 14px; }.smart-control { display: flex; gap: 9px; flex-wrap: wrap; align-items: center; }.smart-select { min-width: 0px; flex: 1 0%; padding: 11px 12px 11px 12px; border: 1px solid rgba(225, 230, 255, 0.25); border-radius: 11px; background: rgb(32, 45, 67); color: rgb(255, 255, 255); font: inherit inherit inherit inherit inherit inherit inherit; }.smart-action { border: 0; border-radius: 11px; padding: 11px 15px 11px 15px; background: rgb(255, 180, 94); color: rgb(43, 26, 16); font-weight: 800; cursor: pointer; }.smart-action:hover { transform: translateY(-1px); }.smart-result { margin-top: 14px; padding: 13px 14px 13px 14px; border-radius: 12px; background: rgba(8, 14, 25, 0.48); color: rgb(232, 234, 245); font-size: 13px; line-height: 1.75; min-height: 48px; }.smart-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin-top: 14px; }.smart-stat { padding: 12px; border-radius: 12px; background: rgba(8, 14, 25, 0.4); text-align: center; }.smart-stat strong { display: block; font-size: 21px; color: rgb(255, 208, 143); }.smart-stat span { font-size: 11px; color: rgb(195, 204, 218); }.smart-stock-list { display: grid; gap: 10px; }.smart-stock-row { display: flex; justify-content: space-between; gap: 12px; padding: 10px 12px 10px 12px; border-radius: 10px; background: rgba(8, 14, 25, 0.4); font-size: 13px; color: rgb(231, 234, 244); }.smart-stock-row b { color: rgb(159, 226, 189); white-space: nowrap; }.smart-stock-row .low { color: rgb(255, 207, 131); }.smart-heatmap { height: 94px; border-radius: 12px; margin-top: 12px; border: 1px solid rgba(255, 255, 255, 0.12); position: relative; overflow: hidden; }.smart-heatmap::after { content: "示意熱點圖・非即時攝影機資料"; position: absolute; bottom: 7px; left: 10px; color: rgb(255, 255, 255); font-size: 10px; text-shadow: 0 1px 4px rgb(0, 0, 0); }.smart-flow { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; margin: 14px 0 14px 0; }.smart-flow span { font-size: 12px; padding: 8px 10px 8px 10px; border-radius: 9px; background: rgba(255, 255, 255, 0.1); color: rgb(232, 234, 245); }.smart-flow i { color: rgb(255, 189, 115); font-style: normal; }.smart-store-section .trust-note { color: rgb(174, 185, 203); }@media (max-width: 760px) { .smart-feature-grid { grid-template-columns: 1fr; }.smart-store-section { padding: 58px 0 58px 0; }.smart-panel { padding: 18px; }.smart-stats { grid-template-columns: repeat(3, 1fr); } }.manager-toggle { border: 1px solid rgb(229, 161, 109) !important; border-radius: 999px !important; padding: 8px 12px 8px 12px !important; color: rgb(139, 75, 44) !important; font-weight: 800; }.customer-feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.grab-flow-card { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 20px; padding: 22px 24px 22px 24px; border-radius: 18px; background: linear-gradient(120deg, rgb(255, 241, 223), rgb(255, 250, 244)); color: rgb(51, 43, 42); border: 1px solid rgb(240, 213, 189); }.grab-label, .manager-eyebrow { font-size: 11px; letter-spacing: 0.16em; font-weight: 900; color: rgb(187, 98, 59); }.grab-flow-card h3 { font-size: 20px; margin: 4px 0 4px 0; }.grab-flow-card p { font-size: 14px; color: rgb(111, 98, 94); max-width: 700px; }.manager-dashboard { padding: 64px 0 64px 0; background: rgb(243, 245, 248); color: rgb(32, 41, 56); border-top: 1px solid rgb(225, 229, 235); }.manager-dashboard[hidden] { display: none !important; }.manager-heading { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 22px; }.manager-heading h2 { margin: 5px 0 5px 0; }.manager-heading p { color: rgb(101, 113, 132); }.manager-exit { border: 1px solid rgb(204, 212, 223); background: rgb(255, 255, 255); border-radius: 999px; padding: 10px 15px 10px 15px; color: rgb(51, 65, 85); font-weight: 800; white-space: nowrap; }.manager-notice { padding: 13px 16px 13px 16px; background: rgb(255, 248, 232); border-left: 4px solid rgb(228, 163, 77); border-radius: 10px; color: rgb(114, 83, 38); font-size: 13px; line-height: 1.7; margin-bottom: 20px; }.manager-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }.manager-card { background: rgb(255, 255, 255); border: 1px solid rgb(226, 231, 238); border-radius: 18px; padding: 21px; box-shadow: 0 8px 25px rgb(28, 43, 61); }.manager-icon { width: 42px; height: 42px; display: grid; border-radius: 12px; background: rgb(237, 241, 255); color: rgb(70, 91, 176); font-size: 22px; margin-bottom: 12px; }.manager-card h3 { font-size: 18px; margin-bottom: 8px; }.manager-card p { font-size: 13px; color: rgb(101, 113, 132); line-height: 1.7; min-height: 66px; }.manager-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; margin: 15px 0 15px 0; }.manager-metrics div { background: rgb(244, 246, 250); padding: 10px 5px 10px 5px; border-radius: 10px; text-align: center; }.manager-metrics strong { display: block; font-size: 20px; color: rgb(53, 75, 147); }.manager-metrics span { font-size: 10px; color: rgb(104, 115, 134); }.manager-heatmap { height: 112px; border-radius: 12px; position: relative; margin-bottom: 13px; }.manager-heatmap span { position: absolute; bottom: 7px; left: 10px; color: white; font-size: 11px; text-shadow: 0 1px 3px rgb(0, 0, 0); }.manager-card ul { padding-left: 19px; color: rgb(89, 101, 121); font-size: 12px; line-height: 1.9; }.manager-stock-list { display: grid; gap: 8px; margin: 16px 0 16px 0; }.manager-stock-row { display: flex; justify-content: space-between; gap: 8px; padding: 10px; background: rgb(245, 247, 250); border-radius: 9px; font-size: 12px; }.stock-ok { color: rgb(22, 131, 84); }.stock-low { color: rgb(196, 119, 34); }.manager-process { padding: 12px; background: rgb(243, 245, 249); border-radius: 10px; color: rgb(73, 86, 107); font-size: 11px; line-height: 1.9; margin: 12px 0 12px 0; }.manager-process i { font-style: normal; color: rgb(196, 122, 57); padding: 0 3px 0 3px; }.manager-card small { font-size: 11px; color: rgb(123, 132, 147); }.asset-status { display: flex; align-items: center; gap: 10px; padding: 13px; background: rgb(245, 247, 250); border-radius: 11px; margin: 16px 0 16px 0; }.asset-status strong, .asset-status small { display: block; }.asset-status small { font-size: 11px; color: rgb(119, 129, 148); }.asset-dot { width: 11px; height: 11px; background: rgb(217, 155, 72); border-radius: 50%; box-shadow: 0 0 0 5px rgb(248, 236, 217); }.manager-source { font-size: 12px; color: rgb(102, 112, 133); margin-top: 20px; }.manager-source a { text-decoration: underline; color: rgb(68, 93, 165); }@media (max-width: 850px) { .manager-grid { grid-template-columns: 1fr; }.manager-card p { min-height: 0px; }.manager-heading { align-items: flex-start; flex-direction: column; } }@media (max-width: 560px) { .customer-feature-grid { grid-template-columns: 1fr; }.grab-flow-card { align-items: flex-start; flex-direction: column; }.manager-toggle { font-size: 11px !important; padding: 7px 9px 7px 9px !important; } }.role-gate { position: fixed; inset: 0; z-index: 99999; display: grid; padding: 22px; }.role-gate[hidden] { display: none !important; }.role-gate-card { width: min(calc(760px), calc(100%)); background: rgb(255, 255, 255); border: 1px solid rgb(238, 226, 213); border-radius: 28px; box-shadow: 0 24px 80px rgb(60, 42, 28); text-align: center; }.role-brand { font-weight: 950; font-size: 24px; letter-spacing: -1px; color: rgb(41, 35, 43); }.role-brand span { color: rgb(242, 139, 72); }.role-kicker { margin-top: 28px; color: rgb(189, 112, 68); font-size: 11px; letter-spacing: 0.2em; font-weight: 900; }.role-gate-card h1 { margin: 10px 0 10px 0; color: rgb(40, 35, 43); }.role-gate-card > p { color: rgb(119, 113, 122); margin: 0 0 28px 0; }.role-choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; text-align: left; }.role-choice { min-height: 220px; padding: 24px; border: 1.5px solid rgb(233, 227, 220); border-radius: 20px; background: rgb(255, 255, 255); display: flex; flex-direction: column; align-items: flex-start; cursor: pointer; transition: initial 0.2s initial initial; color: rgb(48, 42, 48); }.role-choice:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgb(52, 39, 26); border: rgb(233, 163, 111); }.seller-choice { background: linear-gradient(145deg, rgb(244, 241, 255), rgb(255, 255, 255)); border: rgb(222, 216, 250); }.role-choice-icon { font-size: 30px; margin-bottom: 15px; }.role-choice strong { font-size: 21px; }.role-choice small { font-size: 13px; line-height: 1.6; color: rgb(119, 113, 122); margin-top: 7px; }.role-choice em { font-style: normal; font-weight: 850; color: rgb(189, 103, 56); margin-top: auto; padding-top: 20px; }.seller-choice em { color: rgb(98, 82, 165); }.role-gate-foot { font-size: 11px; color: rgb(170, 160, 160); margin-top: 25px; }body:not(.buyer-mode):not(.seller-mode) > .trust-strip, body:not(.buyer-mode):not(.seller-mode) > header, body:not(.buyer-mode):not(.seller-mode) > main, body:not(.buyer-mode):not(.seller-mode) > footer { display: none !important; }body.seller-mode > .trust-strip, body.seller-mode > header, body.seller-mode > footer { display: none !important; }body.seller-mode main > section:not(#managerDashboard) { display: none !important; }body.seller-mode #managerDashboard { display: block !important; min-height: 100vh; }body.buyer-mode #managerDashboard { display: none !important; }.role-switch { border: 1px solid rgb(229, 161, 109) !important; border-radius: 999px !important; padding: 8px 12px 8px 12px !important; color: rgb(139, 75, 44) !important; font-weight: 800; }.manager-dashboard { padding: 42px 0 70px 0; background: rgb(244, 246, 250); color: rgb(32, 41, 56); border-top: 0; }.manager-shell { width: min(calc(1180px), calc((100% - 36px))); margin: auto; }.manager-heading { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 22px; }.manager-heading h2 { margin: 7px 0 7px 0; }.manager-heading p { color: rgb(101, 113, 132); margin: 0; }.manager-eyebrow { font-size: 11px; letter-spacing: 0.16em; font-weight: 900; color: rgb(117, 100, 189); }.manager-exit { border: 1px solid rgb(204, 212, 223); background: rgb(255, 255, 255); border-radius: 999px; padding: 11px 16px 11px 16px; color: rgb(51, 65, 85); font-weight: 800; white-space: nowrap; cursor: pointer; }.manager-notice { padding: 14px 17px 14px 17px; background: rgb(255, 248, 232); border-left: 4px solid rgb(228, 163, 77); border-radius: 10px; color: rgb(114, 83, 38); font-size: 13px; line-height: 1.7; margin-bottom: 20px; }.manager-kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 13px; margin-bottom: 20px; }.manager-kpi { background: rgb(255, 255, 255); border: 1px solid rgb(230, 234, 240); border-radius: 15px; padding: 18px; }.manager-kpi span, .manager-kpi small { display: block; color: rgb(123, 132, 147); font-size: 12px; }.manager-kpi strong { display: block; font-size: 30px; color: rgb(39, 54, 77); margin: 7px 0 7px 0; }.manager-kpi small { font-size: 11px; }.manager-kpi .kpi-warn { color: rgb(196, 119, 34); }.manager-module { background: rgb(255, 255, 255); border: 1px solid rgb(228, 232, 239); border-radius: 20px; padding: 24px; margin: 18px 0 18px 0; box-shadow: 0 8px 28px rgb(36, 52, 75); }.module-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 18px; }.module-number { font-size: 10px; letter-spacing: 0.15em; font-weight: 900; color: rgb(139, 122, 200); }.module-heading h3 { font-size: 23px; margin: 5px 0 5px 0; }.module-heading p { font-size: 13px; color: rgb(112, 123, 139); margin: 0; line-height: 1.6; }.module-chip { white-space: nowrap; border-radius: 999px; padding: 7px 11px 7px 11px; background: rgb(240, 237, 255); color: rgb(103, 87, 169); font-size: 11px; font-weight: 800; }.chip-alert { background: rgb(255, 240, 223); color: rgb(184, 109, 40); }.insight-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 15px; }.insight-panel { border: 1px solid rgb(233, 237, 242); border-radius: 14px; padding: 18px; }.insight-panel h4, .iva-events h4 { font-size: 15px; margin: 0 0 4px 0; }.panel-subtitle { font-size: 11px; color: rgb(137, 146, 160); margin: 0 0 16px 0; }.rank-row { display: grid; grid-template-columns: 27px minmax(0, 1fr) auto; gap: 8px; align-items: center; margin: 13px 0 13px 0; font-size: 11px; }.rank-no { font-weight: 900; color: rgb(139, 122, 200); }.rank-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: rgb(74, 85, 101); }.rank-row b { font-size: 11px; color: rgb(57, 70, 90); }.rank-track { grid-column: 2 4; height: 6px; background: rgb(237, 240, 245); border-radius: 8px; overflow: hidden; }.rank-track i, .preference-track i { display: block; height: 100%; background: linear-gradient(90deg, rgb(142, 123, 208), rgb(232, 163, 108)); border-radius: 8px; }.preference-row { display: grid; grid-template-columns: 1fr auto; gap: 8px; font-size: 12px; margin: 14px 0 5px 0; }.preference-row b { color: rgb(98, 82, 165); }.preference-track { grid-column: 1 3; height: 7px; background: rgb(237, 240, 245); border-radius: 8px; overflow: hidden; }.manager-recommendation { margin-top: 18px; padding: 13px; background: rgb(247, 245, 255); border-radius: 11px; }.manager-recommendation strong { font-size: 12px; color: rgb(98, 82, 165); }.manager-recommendation p { font-size: 11px; color: rgb(101, 113, 132); line-height: 1.6; margin: 5px 0 0 0; }.heatmap-panel { margin-top: 15px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 15px; align-items: center; }.store-map { min-height: 210px; position: relative; overflow: hidden; border-radius: 13px; border: 8px solid rgb(233, 237, 242); }.zone { position: absolute; padding: 5px 8px 5px 8px; border-radius: 6px; background: rgb(255, 255, 255); font-size: 10px; font-weight: 800; color: rgb(56, 68, 84); }.zone-entry { left: 5%; bottom: 8%; }.zone-wireless { left: 35%; top: 23%; }.zone-accessory { right: 4%; top: 10%; }.zone-checkout { right: 5%; bottom: 8%; }.heat-legend { position: absolute; left: 10px; top: 9px; font-size: 9px; color: rgb(51, 65, 85); background: rgb(255, 255, 255); padding: 4px 7px 4px 7px; border-radius: 6px; }.heat-legend i { display: inline-block; width: 55px; height: 7px; margin: 0 4px 0 4px; background: linear-gradient(90deg, rgb(255, 219, 122), rgb(240, 100, 92)); border-radius: 5px; }.heatmap-note { grid-column: 1 3; margin: 0; color: rgb(105, 117, 134); font-size: 11px; line-height: 1.6; }.inventory-table-wrap { overflow-x: auto; }.inventory-table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 12px; }.inventory-table th { text-align: left; background: rgb(245, 246, 250); color: rgb(102, 112, 133); padding: 12px 10px 12px 10px; font-weight: 800; }.inventory-table td { padding: 12px 10px 12px 10px; border-bottom: 1px solid rgb(237, 240, 244); color: rgb(71, 84, 103); }.inventory-status { display: inline-block; padding: 5px 8px 5px 8px; border-radius: 999px; font-size: 10px; font-weight: 800; }.status-ok { background: rgb(233, 247, 239); color: rgb(22, 131, 84); }.status-low { background: rgb(255, 241, 228); color: rgb(189, 107, 37); }.inventory-workflow, .iva-flow { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 17px; padding: 14px; background: rgb(246, 247, 251); border-radius: 12px; font-size: 11px; color: rgb(78, 93, 112); }.inventory-workflow b, .iva-flow b { color: rgb(155, 131, 207); }.iva-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 15px; }.iva-status-card { padding: 18px; border-radius: 14px; background: rgb(246, 247, 251); }.iva-camera-icon { width: 42px; height: 42px; display: grid; border-radius: 12px; background: rgb(233, 229, 250); color: rgb(103, 87, 169); font-size: 27px; float: left; margin: 0 12px 12px 0; }.iva-status-card strong, .iva-status-card span { display: block; }.iva-offline { font-size: 10px; color: rgb(184, 120, 48); margin-top: 5px; }.iva-status-card p { clear: both; font-size: 12px; line-height: 1.7; color: rgb(105, 117, 134); padding-top: 10px; margin: 0; }.iva-events { border: 1px solid rgb(233, 237, 242); border-radius: 14px; padding: 17px; }.iva-event { display: flex; align-items: center; gap: 10px; padding: 13px 0 13px 0; border-bottom: 1px solid rgb(237, 240, 244); }.iva-event:last-child { border: 0; }.iva-event div { flex: 1 0%; }.iva-event strong, .iva-event small { display: block; }.iva-event strong { font-size: 12px; }.iva-event small { font-size: 10px; color: rgb(123, 132, 147); margin-top: 4px; }.iva-event > b { font-size: 10px; color: rgb(189, 118, 45); }.event-dot { width: 9px; height: 9px; border-radius: 50%; flex: 0 0 auto; }.event-warn { background: rgb(230, 154, 70); }.event-info { background: rgb(110, 158, 210); }.privacy-note { font-size: 10px; color: rgb(123, 132, 147); line-height: 1.7; margin: 12px 0 0 0; }.manager-source { font-size: 12px; color: rgb(102, 112, 133); margin-top: 20px; }.manager-source a { text-decoration: underline; color: rgb(68, 93, 165); }@media (max-width: 760px) { .role-choice-grid, .insight-grid, .heatmap-panel, .iva-grid { grid-template-columns: 1fr; }.manager-kpi-grid { grid-template-columns: repeat(2, 1fr); }.heatmap-note { grid-column: 1 initial; }.manager-module { padding: 17px; }.manager-heading { align-items: flex-start; flex-direction: column; }.manager-exit { white-space: normal; }.role-choice { min-height: 190px; }.store-map { min-height: 190px; } }body.hack-sim-mode { --accent: rgb(255,59,79); --accent-dark: rgb(168,7,32); }body.hack-sim-mode .role-gate, body.hack-sim-mode .manager-dashboard, body.hack-sim-mode header, body.hack-sim-mode main, body.hack-sim-mode footer {  }body.hack-sim-mode .role-gate::after, body.hack-sim-mode .manager-dashboard::after { content: "SIMULATION • SYSTEM COMPROMISED"; display: block; width: max-content; max-width: calc(100% - 32px); margin: 14px auto 14px auto; padding: 8px 13px 8px 13px; border: 1px solid rgb(255, 59, 79); color: rgb(255, 59, 79); background: rgb(24, 7, 11); border-radius: 7px; font: 700 11px / 1.4 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 1.3px; text-align: center; }#hackSimOverlay { position: fixed; inset: 0; z-index: 999999; display: flex; align-items: center; justify-content: center; padding: 18px; background: rgba(3, 5, 10, 0.97); color: rgb(216, 255, 227); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; overflow: auto; }#hackSimOverlay[hidden] { display: none !important; }#hackSimOverlay::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.16; }.hack-sim-panel { position: relative; width: min(calc(760px), calc(100%)); border: 1px solid rgb(255, 52, 75); background: linear-gradient(145deg, rgba(16, 20, 27, 0.98), rgba(8, 9, 14, 0.99)); box-shadow: 0 0 35px rgba(255, 35, 65, 0.2); border-radius: 14px; overflow: hidden; }.hack-sim-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 13px 16px 13px 16px; background: rgb(33, 10, 16); border-bottom: 1px solid rgb(108, 27, 42); color: rgb(255, 89, 108); font-size: 11px; letter-spacing: 1.2px; font-weight: 800; }.hack-sim-lights { display: flex; gap: 6px; }.hack-sim-lights i { width: 8px; height: 8px; border-radius: 50%; background: rgb(255, 59, 79); display: block; }.hack-sim-body {  }.hack-sim-kicker { color: rgb(255, 83, 105); font-size: 11px; letter-spacing: 2px; font-weight: 800; }.hack-sim-title { margin: 10px 0 8px 0; color: rgb(255, 255, 255); line-height: 1.08; font-weight: 900; letter-spacing: -1px; }.hack-sim-desc { color: rgb(156, 169, 184); line-height: 1.7; font-size: 13px; }.hack-sim-log { margin: 20px 0 14px 0; padding: 14px; border: 1px solid rgb(39, 59, 49); background: rgb(5, 11, 9); border-radius: 8px; min-height: 130px; color: rgb(131, 249, 173); font-size: 12px; line-height: 1.85; overflow: hidden; }.hack-sim-log .warn { color: rgb(255, 101, 121); }.hack-sim-log .muted { color: rgb(110, 135, 149); }.hack-sim-progress { height: 8px; border-radius: 99px; background: rgb(24, 34, 29); overflow: hidden; margin: 12px 0 8px 0; }.hack-sim-progress span { display: block; height: 100%; width: 0px; background: linear-gradient(90deg, rgb(0, 229, 139), rgb(255, 64, 87)); }.hack-sim-status { display: flex; justify-content: space-between; gap: 10px; color: rgb(124, 141, 152); font-size: 11px; }.hack-sim-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }.hack-sim-actions button { border: 1px solid rgb(255, 59, 79); border-radius: 8px; padding: 12px 16px 12px 16px; background: rgb(255, 52, 75); color: rgb(255, 255, 255); font: inherit inherit 800 13px inherit inherit inherit; cursor: pointer; }.hack-sim-actions button.secondary { background: transparent; color: rgb(184, 197, 206); border: rgb(57, 67, 76); }.hack-sim-footnote { margin-top: 16px; color: rgb(111, 125, 137); font-size: 10px; line-height: 1.6; }#hackSimBadge { position: fixed; z-index: 99990; left: 12px; bottom: 12px; padding: 8px 11px 8px 11px; border-radius: 7px; border: 1px solid rgb(255, 59, 79); background: rgb(23, 7, 11); color: rgb(255, 83, 105); font: 800 10px / 1.3 ui-monospace, monospace; letter-spacing: 0.8px; box-shadow: 0 5px 20px rgb(0, 0, 0); }#hackSimBadge[hidden] { display: none !important; }@keyframes hackGlitch{  }@media not all { .hack-sim-title {  }.hack-sim-progress span { transition: none initial initial initial; } }</style>
+</head>
+
+<body>
+
+  <div class="role-gate" id="roleGate" role="dialog" aria-modal="true" aria-labelledby="roleGateTitle">
+    <div class="role-gate-card"><div class="role-brand">MIC LAB<span>.</span></div><div class="role-kicker">SMART STORE EXPERIENCE</div><h1 id="roleGateTitle">歡迎來到智慧商店</h1><p>請先選擇進入身分，前往專屬操作介面。</p><div class="role-choice-grid"><button class="role-choice buyer-choice" id="enterBuyer" type="button"><span class="role-choice-icon">🛍️</span><strong>我是買家</strong><small>瀏覽商品、AI 選品、購物車與快速結帳</small><em>進入購物網站 →</em></button><button class="role-choice seller-choice" id="enterSeller" type="button"><span class="role-choice-icon">📊</span><strong>我是賣家</strong><small>商品分析、人流熱點、庫存管理與 IVA 資產保護</small><em>進入管理中心 →</em></button></div><div class="role-gate-foot">MIC LAB.｜AI 智慧零售概念展示</div></div>
+  </div>
+
+
+  <!-- 透明揭露：概念網站尚未提供實際交易服務 -->
+  <div class="trust-strip"><div class="container">萬聖節創作企劃登場｜選購資訊透明｜先確認設備相容性｜本頁為品牌概念展示，尚非實際交易平台</div></div>
+
+  <!-- 導覽列 -->
+  <header>
+    <div class="container navbar">
+      <a href="" class="logo" aria-label="MIC LAB 首頁">
+        MIC LAB<span>.</span>
+      </a>
+
+      <nav class="nav-links" aria-label="主要導覽">
+          <a href="#smart-store">AI 智慧商店</a>
+        <a href="#categories">創作情境</a>
+        <a href="#products">商品指南</a>
+        <a href="#guide">選購須知</a>
+        <a href="#faq">常見問題</a>
+        <a href="#about">品牌理念</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-button role-switch" id="roleSwitchBuyer" type="button">切換身分</button>
+        <button class="icon-button" id="searchToggle" aria-label="開啟搜尋" aria-expanded="false" aria-controls="searchPanel">⌕ 搜尋</button>
+        <button class="icon-button" id="cartButton" aria-label="開啟購物車">
+          購物車 <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="container search-panel" id="searchPanel">
+      <input id="searchInput" type="search" placeholder="搜尋麥克風、收音設備或創作情境..." aria-label="搜尋商品">
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 首頁主視覺 -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <div class="eyebrow">SOUND BETTER. CREATE MORE.</div>
+          <h1>讓好聲音，<br>成為作品的亮點。</h1>
+          <p>
+            從短影音、戶外 Vlog 到訪談，
+            先釐清使用情境、設備相容性與預算，
+            再選擇真正符合需求的收音工具。
+          </p>
+          <a class="button" href="#categories">
+            依情境探索 <span>→</span>
+          </a>
+        </div>
+
+        <div class="hero-visual">
+          <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="影音創作與錄音設備" fetchpriority="high" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23fff0d9'/%3E%3Ccircle cx='400' cy='250' r='150' fill='%23f6d4b4'/%3E%3Crect x='345' y='115' width='110' height='190' rx='55' fill='%235b3a78'/%3E%3Cpath d='M320 245 Q320 335 400 335 Q480 335 480 245' fill='none' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Cpath d='M400 335 V390 M350 390 H450' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Ccircle cx='375' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='375' cy='190' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='190' r='8' fill='%23ffb35c'/%3E%3Ctext x='400' y='465' font-family='Arial,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='%235b3a78'%3EMIC LAB%3C/text%3E%3C/svg%3E'">
+          <div class="hero-label">創作情境 × 收音選擇</div>
+        </div>
+      </div>
+      <div class="container"><p class="trust-note">提醒：MIC LAB. 為獨立品牌概念展示，並非 DJI 官方網站。商品圖片為版面示意；此頁不提供實際下單或付款。正式販售前將核實商品、價格、庫存、保固及授權資訊。</p></div>
+    </section>
+
+
+    <!-- Halloween seasonal campaign: added promotional section, original page sections remain intact -->
+    <section class="container halloween-campaign" id="halloween">
+      <div class="halloween-kicker">MIC LAB. AFTER DARK / HALLOWEEN 2026</div>
+      <h2>今晚，讓好聲音<br><span class="halloween-spark">有一點神祕。</span></h2>
+      <p class="campaign-intro">萬聖節限定企劃登場。用清晰收音捕捉每一聲驚呼、每一段怪奇故事，讓你的恐怖短片、變裝直播與夜間 Vlog 更有臨場感。</p>
+      <div class="halloween-feature-grid">
+        <article class="halloween-feature">
+          <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&amp;fit=crop&amp;w=600&amp;q=85" alt="無線麥克風收音設備" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23fff0d9'/%3E%3Ccircle cx='400' cy='250' r='150' fill='%23f6d4b4'/%3E%3Crect x='345' y='115' width='110' height='190' rx='55' fill='%235b3a78'/%3E%3Cpath d='M320 245 Q320 335 400 335 Q480 335 480 245' fill='none' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Cpath d='M400 335 V390 M350 390 H450' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Ccircle cx='375' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='375' cy='190' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='190' r='8' fill='%23ffb35c'/%3E%3Ctext x='400' y='465' font-family='Arial,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='%235b3a78'%3EMIC LAB%3C/text%3E%3C/svg%3E'">
+          <div>
+            <span class="gift-tag">主打推薦 01 · 雙人創作</span>
+            <h3>DJI Mic 2 無線麥克風（雙發射器套裝）</h3>
+            <p>適合雙人扮裝訪談、恐怖故事對談與情境短片。拍下彼此的反應，也把聲音細節好好留下。</p>
+            <div class="campaign-price">NT$ 10,490</div>
+            <button class="detail-button" type="button" data-detail="DJI Mic 2 無線麥克風（雙發射器套裝）">查看操作與特色</button> <button class="add-button" data-product="DJI Mic 2 無線麥克風（雙發射器套裝）" data-price="10490">加入購物車 +</button>
+          </div>
+        </article>
+        <article class="halloween-feature">
+          <img src="https://images.unsplash.com/photo-1593078166032-c9e9c6e3a1d4?auto=format&amp;fit=crop&amp;w=600&amp;q=85" alt="輕巧收音設備" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23fff0d9'/%3E%3Ccircle cx='400' cy='250' r='150' fill='%23f6d4b4'/%3E%3Crect x='345' y='115' width='110' height='190' rx='55' fill='%235b3a78'/%3E%3Cpath d='M320 245 Q320 335 400 335 Q480 335 480 245' fill='none' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Cpath d='M400 335 V390 M350 390 H450' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Ccircle cx='375' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='375' cy='190' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='190' r='8' fill='%23ffb35c'/%3E%3Ctext x='400' y='465' font-family='Arial,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='%235b3a78'%3EMIC LAB%3C/text%3E%3C/svg%3E'">
+          <div>
+            <span class="gift-tag">主打推薦 02 · 輕巧入門</span>
+            <h3>DJI Mic Mini 無線麥克風</h3>
+            <p>輕裝出門拍夜間 Vlog、街頭變裝或萬聖節短影音，讓創作流程更俐落。</p>
+            <div class="campaign-price">NT$ 2,990</div>
+            <button class="detail-button" type="button" data-detail="DJI Mic Mini 無線麥克風">查看操作與特色</button> <button class="add-button" data-product="DJI Mic Mini 無線麥克風" data-price="2990">加入購物車 +</button>
+          </div>
+        </article>
+      </div>
+      <h3 class="gift-heading">南瓜與小幽靈的限定贈禮</h3>
+      <div class="gift-showcase">
+        <article class="gift-card">
+          <img alt="南瓜造型收納小袋贈品插畫" loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3Crect width='240' height='240' rx='24' fill='%23fff0d9'/%3E%3Cellipse cx='120' cy='198' rx='68' ry='12' fill='%23e9c9a7'/%3E%3Cpath d='M88 56 Q120 28 152 56 L148 76 L92 76Z' fill='%235c7a42'/%3E%3Cpath d='M120 48 Q111 31 126 20 Q141 34 120 48Z' fill='%237c9b4b'/%3E%3Cellipse cx='120' cy='125' rx='62' ry='70' fill='%23ff8a26'/%3E%3Cellipse cx='91' cy='125' rx='28' ry='63' fill='%23ffa13d'/%3E%3Cellipse cx='149' cy='125' rx='28' ry='63' fill='%23f4771d'/%3E%3Cpath d='M87 112 L104 126 L91 135Z M153 112 L136 126 L149 135Z' fill='%233b244e'/%3E%3Cpath d='M93 151 Q120 176 147 151 L138 169 L102 169Z' fill='%233b244e'/%3E%3Cpath d='M103 155 L111 166 L119 155 L127 166 L137 155' fill='none' stroke='%23fff0d9' stroke-width='4'/%3E%3C/svg%3E">
+          <div><span class="gift-tag">購買 DJI Mic 2 贈</span><h3>南瓜造型收納小袋</h3><p>把小配件收得整整齊齊，南瓜笑臉陪你一起出任務。</p></div>
+        </article>
+        <article class="gift-card">
+          <img alt="幽靈造型理線夾贈品插畫" loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3Crect width='240' height='240' rx='24' fill='%23f1eaff'/%3E%3Cellipse cx='120' cy='199' rx='60' ry='10' fill='%23d4c5e8'/%3E%3Cpath d='M64 162 V104 Q64 48 120 48 Q176 48 176 104 V162 L154 149 L136 165 L119 151 L101 165 L83 150Z' fill='%23fffdf8' stroke='%23b6a1d2' stroke-width='4' stroke-linejoin='round'/%3E%3Cellipse cx='99' cy='105' rx='7' ry='11' fill='%2339244d'/%3E%3Cellipse cx='141' cy='105' rx='7' ry='11' fill='%2339244d'/%3E%3Cpath d='M108 127 Q120 137 132 127' fill='none' stroke='%2339244d' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M85 177 Q120 189 155 177' fill='none' stroke='%23ff8a35' stroke-width='8' stroke-linecap='round'/%3E%3Ccircle cx='120' cy='177' r='13' fill='%23ff8a35'/%3E%3C/svg%3E">
+          <div><span class="gift-tag">購買 DJI Mic Mini 贈</span><h3>幽靈造型理線夾</h3><p>幫線材簡單整理，讓包包裡少一點打結、多一點可愛。</p></div>
+        </article>
+      </div>
+      <p class="halloween-terms">萬聖節活動（課程展示設定）：購買 DJI Mic 2 贈「南瓜造型收納小袋」1 個；購買 DJI Mic Mini 贈「幽靈造型理線夾」1 個。贈品圖片與供應、活動期間、庫存及正式活動條款均為概念示意，實際上線前須確認後公告。本網站仍為模擬購物原型，不會實際收款或出貨。</p>
+    </section>
+
+    <!-- 情境分類 -->
+    <section id="categories">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <h2>依照你的創作情境選購</h2>
+            <p>找到適合你的設備，讓創作更輕鬆。</p>
+          </div>
+        </div>
+
+        <div class="category-grid">
+          <a href="#products" class="category-card" data-category-link="vlog">
+            <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="戶外旅行與自然紀錄" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23fff0d9'/%3E%3Ccircle cx='400' cy='250' r='150' fill='%23f6d4b4'/%3E%3Crect x='345' y='115' width='110' height='190' rx='55' fill='%235b3a78'/%3E%3Cpath d='M320 245 Q320 335 400 335 Q480 335 480 245' fill='none' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Cpath d='M400 335 V390 M350 390 H450' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Ccircle cx='375' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='375' cy='190' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='190' r='8' fill='%23ffb35c'/%3E%3Ctext x='400' y='465' font-family='Arial,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='%235b3a78'%3EMIC LAB%3C/text%3E%3C/svg%3E'">
+            <div class="category-info">
+              <h3>戶外 Vlog</h3>
+              <p>記錄旅程中的每一個聲音 →</p>
+            </div>
+          </a>
+
+          <a href="#products" class="category-card" data-category-link="video">
+            <img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="影音拍攝與創作" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23fff0d9'/%3E%3Ccircle cx='400' cy='250' r='150' fill='%23f6d4b4'/%3E%3Crect x='345' y='115' width='110' height='190' rx='55' fill='%235b3a78'/%3E%3Cpath d='M320 245 Q320 335 400 335 Q480 335 480 245' fill='none' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Cpath d='M400 335 V390 M350 390 H450' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Ccircle cx='375' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='375' cy='190' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='190' r='8' fill='%23ffb35c'/%3E%3Ctext x='400' y='465' font-family='Arial,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='%235b3a78'%3EMIC LAB%3C/text%3E%3C/svg%3E'">
+            <div class="category-info">
+              <h3>短影音創作</h3>
+              <p>讓畫面與聲音同樣出色 →</p>
+            </div>
+          </a>
+
+          <a href="#products" class="category-card" data-category-link="stream">
+            <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="電腦與遊戲娛樂設備" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23fff0d9'/%3E%3Ccircle cx='400' cy='250' r='150' fill='%23f6d4b4'/%3E%3Crect x='345' y='115' width='110' height='190' rx='55' fill='%235b3a78'/%3E%3Cpath d='M320 245 Q320 335 400 335 Q480 335 480 245' fill='none' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Cpath d='M400 335 V390 M350 390 H450' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Ccircle cx='375' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='375' cy='190' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='190' r='8' fill='%23ffb35c'/%3E%3Ctext x='400' y='465' font-family='Arial,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='%235b3a78'%3EMIC LAB%3C/text%3E%3C/svg%3E'">
+            <div class="category-info">
+              <h3>直播與遊戲</h3>
+              <p>打造自己的創作空間 →</p>
+            </div>
+          </a>
+
+          <a href="#products" class="category-card" data-category-link="interview">
+            <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="錄音與訪談情境" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23fff0d9'/%3E%3Ccircle cx='400' cy='250' r='150' fill='%23f6d4b4'/%3E%3Crect x='345' y='115' width='110' height='190' rx='55' fill='%235b3a78'/%3E%3Cpath d='M320 245 Q320 335 400 335 Q480 335 480 245' fill='none' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Cpath d='M400 335 V390 M350 390 H450' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Ccircle cx='375' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='375' cy='190' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='190' r='8' fill='%23ffb35c'/%3E%3Ctext x='400' y='465' font-family='Arial,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='%235b3a78'%3EMIC LAB%3C/text%3E%3C/svg%3E'">
+            <div class="category-info">
+              <h3>訪談與商務</h3>
+              <p>清楚記錄每一段重要對話 →</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 主打商品 -->
+    
+    <!-- 消費者端：自主購物與快速結帳 -->
+    <section class="smart-store-section customer-smart-section" id="smart-store">
+      <div class="container">
+        <div class="smart-kicker">✦ MIC LAB SMART SHOPPING</div>
+        <h2>選好商品，手機快速結帳。<br>讓購物更流暢。</h2>
+        <p class="smart-lead">體驗免排隊結帳（Grab-and-Go）的智慧購物概念：先挑選需要的收音設備，加入智慧購物車，再透過手機完成模擬結帳。讓選購更直覺、流程更快速。</p>
+        <div class="smart-demo-note">本區為無人商店購物流程示範：目前以網站購物車與模擬結帳呈現，尚未串接手機支付、實體 AI 購物車、門市感測器或自動商店設備。</div>
+        <div class="smart-feature-grid customer-feature-grid">
+          <article class="smart-panel">
+            <div class="smart-icon">✧</div>
+            <h3>AI 智慧選品助手</h3>
+            <p>依照創作情境快速找到適合的收音設備，減少反覆比較的時間。</p>
+            <div class="smart-control">
+              <select class="smart-select" id="smartUseCase" aria-label="選擇創作情境">
+                <option value="vlog">戶外 Vlog／旅行紀錄</option>
+                <option value="short">短影音／社群創作</option>
+                <option value="interview">雙人訪談／商務</option>
+                <option value="stream">直播／遊戲</option>
+              </select>
+              <button class="smart-action" id="smartRecommendBtn" type="button">推薦適合商品</button>
+            </div>
+            <div class="smart-result" id="smartRecommendResult" aria-live="polite">選擇你的創作情境，取得商品推薦方向。</div>
+          </article>
+          <article class="smart-panel">
+            <div class="smart-icon">▣</div>
+            <h3>智慧購物車・免排隊結帳</h3>
+            <p>將商品加入購物車，確認品項與金額，再進入手機友善的模擬自助結帳流程。</p>
+            <div class="smart-flow"><span>挑選商品</span><i>→</i><span>加入購物車</span><i>→</i><span>手機結帳</span></div>
+            <div class="smart-control">
+              <button class="smart-action" id="smartAddFeatured" type="button" data-product="DJI Mic 2 無線麥克風（雙發射器套裝）" data-price="10490">加入主打商品</button>
+              <button class="smart-action" id="smartOpenCart" type="button">查看購物車</button>
+            </div>
+            <div class="smart-result" id="smartCartResult" aria-live="polite">沿用原有購物車；結帳為課程展示流程，不會實際扣款。</div>
+          </article>
+        </div>
+        <div class="grab-flow-card">
+          <div><span class="grab-label">GRAB &amp; GO</span><h3>像無人商店一樣，快速完成購物</h3><p>瀏覽商品 → 加入購物車 → 手機確認訂單 → 完成模擬結帳。未來可擴充 AI 購物車、迷你商店、智慧倉儲與全自動商店。</p></div>
+          <a class="button" href="#products">立即選購 <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 店家管理端：只有在入口選擇「賣家」後才會顯示 -->
+    <section class="manager-dashboard" id="managerDashboard" hidden="" aria-labelledby="managerTitle">
+      <div class="manager-shell">
+        <div class="manager-heading">
+          <div><div class="manager-eyebrow">MIC LAB / STORE INTELLIGENCE</div><h2 id="managerTitle">智慧商店營運管理中心</h2><p>賣家專用｜以買家網站中的商品與虛構營運數據進行分析示範</p></div>
+          <button class="manager-exit" id="managerModeExit" type="button">← 返回身分選擇</button>
+        </div>
+        <div class="manager-notice"><strong>展示資料說明：</strong>以下銷售、瀏覽、人流、庫存與事件皆為虛構示範數字，依照買家頁面現有商品建立；目前未連接真實 POS、攝影機、感測器或 AI 模型。</div>
+        <div class="manager-kpi-grid">
+          <div class="manager-kpi"><span>今日瀏覽人次</span><strong>1,286</strong><small>較昨日 +12.8%</small></div>
+          <div class="manager-kpi"><span>商品互動次數</span><strong>864</strong><small>熱門商品點擊與收藏</small></div>
+          <div class="manager-kpi"><span>模擬成交訂單</span><strong>96</strong><small>示範交易資料</small></div>
+          <div class="manager-kpi"><span>待補貨商品</span><strong>3</strong><small class="kpi-warn">需要留意</small></div>
+        </div>
+
+        <section class="manager-module">
+          <div class="module-heading"><div><span class="module-number">01 / CUSTOMER INSIGHTS</span><h3>客戶與商店分析</h3><p>從買家頁面中的商品瀏覽、點擊與模擬購買資料，分析熱門商品及購物偏好。</p></div><span class="module-chip">模擬分析</span></div>
+          <div class="insight-grid">
+            <div class="insight-panel"><h4>熱門商品排行</h4><p class="panel-subtitle">依商品互動次數排序</p>
+              <div class="rank-row"><span class="rank-no">01</span><span class="rank-name">DJI Mic 2 無線麥克風（雙發射器套裝）</span><b>286 次</b><div class="rank-track"><i style="width: 100%;"></i></div></div>
+              <div class="rank-row"><span class="rank-no">02</span><span class="rank-name">DJI Mic Mini 無線麥克風</span><b>231 次</b><div class="rank-track"><i style="width: 81%;"></i></div></div>
+              <div class="rank-row"><span class="rank-no">03</span><span class="rank-name">RØDE Wireless ME 無線麥克風</span><b>174 次</b><div class="rank-track"><i style="width: 61%;"></i></div></div>
+              <div class="rank-row"><span class="rank-no">04</span><span class="rank-name">USB 桌上型收音麥克風</span><b>128 次</b><div class="rank-track"><i style="width: 45%;"></i></div></div>
+              <div class="rank-row"><span class="rank-no">05</span><span class="rank-name">雙人訪談收音方案</span><b>92 次</b><div class="rank-track"><i style="width: 32%;"></i></div></div>
+            </div>
+            <div class="insight-panel"><h4>購物偏好分析</h4><p class="panel-subtitle">依模擬買家選擇的使用情境</p>
+              <div class="preference-row"><span>Vlog／戶外拍攝</span><b>38%</b><div class="preference-track"><i style="width: 38%;"></i></div></div>
+              <div class="preference-row"><span>短影音／直播</span><b>29%</b><div class="preference-track"><i style="width: 29%;"></i></div></div>
+              <div class="preference-row"><span>訪談／雙人收音</span><b>21%</b><div class="preference-track"><i style="width: 21%;"></i></div></div>
+              <div class="preference-row"><span>居家錄音／線上會議</span><b>12%</b><div class="preference-track"><i style="width: 12%;"></i></div></div>
+              <div class="manager-recommendation"><strong>促銷建議</strong><p>可針對 Vlog 與短影音族群，在首頁推薦 DJI Mic 2、DJI Mic Mini；於相關商品貨架增加體驗展示或組合優惠。</p></div>
+            </div>
+          </div>
+          <div class="insight-panel heatmap-panel"><div><h4>店內人流熱點圖</h4><p class="panel-subtitle">示意平面配置：顏色越偏紅代表人潮越集中</p></div>
+            <div class="store-map" role="img" aria-label="模擬店內人流熱點圖，入口、無線麥克風展示區與結帳區為熱點"><span class="zone zone-entry">入口</span><span class="zone zone-wireless">無線麥克風展示區</span><span class="zone zone-accessory">配件區</span><span class="zone zone-checkout">結帳區</span><span class="heat-legend">人流密度　低 <i></i> 高</span></div>
+            <p class="heatmap-note">分析用途：找出人潮密集區域，作為線上推薦版位、店內貨架陳列與促銷活動的參考。</p>
+          </div>
+        </section>
+
+        <section class="manager-module">
+          <div class="module-heading"><div><span class="module-number">02 / INVENTORY INTELLIGENCE</span><h3>缺貨和庫存管理</h3><p>依照買家系統中的商品建立庫存清單，協助減少重複盤點、及早發現缺貨並提醒補貨。</p></div><span class="module-chip chip-alert">3 項待處理</span></div>
+          <div class="inventory-table-wrap"><table class="inventory-table"><thead><tr><th>商品名稱（對應買家頁面）</th><th>目前庫存</th><th>安全庫存</th><th>近 7 日銷量</th><th>系統判斷</th><th>建議補貨量</th></tr></thead><tbody>
+            <tr><td>DJI Mic 2 無線麥克風（雙發射器套裝）</td><td>18</td><td>8</td><td>24</td><td><span class="inventory-status status-ok">庫存正常</span></td><td>—</td></tr>
+            <tr><td>DJI Mic Mini 無線麥克風</td><td>4</td><td>10</td><td>31</td><td><span class="inventory-status status-low">低庫存</span></td><td>+16</td></tr>
+            <tr><td>RØDE Wireless ME 無線麥克風</td><td>7</td><td>8</td><td>13</td><td><span class="inventory-status status-low">建議補貨</span></td><td>+8</td></tr>
+            <tr><td>BOYA BY-M1 領夾式麥克風</td><td>32</td><td>12</td><td>9</td><td><span class="inventory-status status-ok">庫存正常</span></td><td>—</td></tr>
+            <tr><td>戶外防風毛套組</td><td>5</td><td>10</td><td>17</td><td><span class="inventory-status status-low">低庫存</span></td><td>+12</td></tr>
+            <tr><td>桌上型麥克風支架</td><td>21</td><td>8</td><td>11</td><td><span class="inventory-status status-ok">庫存正常</span></td><td>—</td></tr>
+            <tr><td>雙人訪談收音方案</td><td>9</td><td>5</td><td>6</td><td><span class="inventory-status status-ok">庫存正常</span></td><td>—</td></tr>
+            <tr><td>USB-C 轉接音訊配件</td><td>14</td><td>8</td><td>8</td><td><span class="inventory-status status-ok">庫存正常</span></td><td>—</td></tr>
+            <tr><td>USB 桌上型收音麥克風</td><td>6</td><td>8</td><td>15</td><td><span class="inventory-status status-low">建議補貨</span></td><td>+10</td></tr>
+          </tbody></table></div>
+          <div class="inventory-workflow"><span>商品掃描／辨識</span><b>→</b><span>比對庫存資料</span><b>→</b><span>自動標記低庫存</span><b>→</b><span>提醒店員補貨</span></div>
+        </section>
+
+        <section class="manager-module">
+          <div class="module-heading"><div><span class="module-number">03 / INTELLIGENT VIDEO ANALYTICS</span><h3>智慧影像分析（IVA）與資產保護</h3><p>協助辨識異常事件，讓店員即時留意銷售點與店內資產狀況，降低商品損耗風險。</p></div><span class="module-chip">事件監測示意</span></div>
+          <div class="iva-grid">
+            <div class="iva-status-card"><div class="iva-camera-icon">◎</div><div><strong>店內影像分析狀態</strong><span class="iva-offline">展示模式｜尚未連接實際攝影機</span></div><p>未結帳商品移動、結帳區異常停留、貨架商品數量差異等事件，可由 IVA 系統產生提醒，交由店員確認。</p></div>
+            <div class="iva-events"><h4>模擬事件提醒</h4><div class="iva-event"><span class="event-dot event-warn"></span><div><strong>展示櫃商品移動待確認</strong><small>14:32｜無線麥克風展示區｜提醒店員查看</small></div><b>待確認</b></div><div class="iva-event"><span class="event-dot event-info"></span><div><strong>結帳區停留時間較長</strong><small>14:18｜自助結帳區｜建議提供協助</small></div><b>已通知</b></div><div class="iva-event"><span class="event-dot event-warn"></span><div><strong>貨架數量與庫存紀錄不一致</strong><small>13:56｜配件區｜建議人工複核</small></div><b>待確認</b></div></div>
+          </div>
+          <div class="iva-flow"><span>攝影機／感測器</span><b>→</b><span>IVA 異常辨識</span><b>→</b><span>管理端即時提醒</span><b>→</b><span>店員確認處理</span></div>
+          <p class="privacy-note">隱私與技術說明：本頁僅呈現模擬事件與流程，沒有啟用攝影機、辨識真實顧客身分或進行即時監控。實際部署需依場域規範取得必要告知並串接影像分析系統。</p>
+        </section>
+        <p class="manager-source">智慧零售概念參考 NVIDIA Smart Stores：<a href="https://www.nvidia.com/zh-tw/industries/retail/smart-stores/" target="_blank" rel="noopener">查看 NVIDIA 智慧商店資料</a></p>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <h2>為創作挑選好設備</h2>
+            <p>依照需求，找到你的收音好夥伴。</p><p class="trust-note">商品卡片目前為展示資料，並非即時庫存或報價。正式宣傳前，請以可查證的商品資料、實際售價與供應狀態替換。</p>
+          </div>
+          <a class="text-link" href="#categories">探索所有情境 →</a>
+        </div>
+
+        <div class="product-toolbar" aria-label="商品分類篩選">
+          <button class="filter-button active" data-filter="all">全部商品</button>
+          <button class="filter-button" data-filter="vlog">戶外 Vlog</button>
+          <button class="filter-button" data-filter="video">短影音</button>
+          <button class="filter-button" data-filter="interview">訪談商務</button>
+          <button class="filter-button" data-filter="stream">直播與遊戲</button>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+<article class="product-card" data-category="vlog video interview stream" data-name="DJI Mic 2 無線麥克風（雙發射器套裝）">
+ <div class="product-image"><img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&amp;fit=crop&amp;w=800&amp;q=85" alt="錄音設備與麥克風" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23fff0d9'/%3E%3Ccircle cx='400' cy='250' r='150' fill='%23f6d4b4'/%3E%3Crect x='345' y='115' width='110' height='190' rx='55' fill='%235b3a78'/%3E%3Cpath d='M320 245 Q320 335 400 335 Q480 335 480 245' fill='none' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Cpath d='M400 335 V390 M350 390 H450' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Ccircle cx='375' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='375' cy='190' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='190' r='8' fill='%23ffb35c'/%3E%3Ctext x='400' y='465' font-family='Arial,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='%235b3a78'%3EMIC LAB%3C/text%3E%3C/svg%3E'"><span class="product-tag">主打商品</span></div>
+ <div class="product-info"><div class="product-category">DJI MIC SERIES</div><h3>DJI Mic 2 無線麥克風（雙發射器套裝）</h3><p class="product-desc">適合雙人訪談、Vlog 與短影音；下單前請核對套裝內容與設備相容性。</p>
+ <div class="product-detail-actions"><button class="detail-button" type="button" data-detail="DJI Mic 2 無線麥克風（雙發射器套裝）">查看產品詳情</button></div><div class="product-bottom"><span class="price">NT$ 10,490</span><button class="add-button" data-product="DJI Mic 2 無線麥克風（雙發射器套裝）" data-price="10490">加入購物車 +</button></div></div></article>
+<article class="product-card" data-category="vlog video stream" data-name="DJI Mic Mini 無線麥克風">
+ <div class="product-image"><img src="https://images.unsplash.com/photo-1593078166032-c9e9c6e3a1d4?auto=format&amp;fit=crop&amp;w=800&amp;q=85" alt="小型收音設備" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23fff0d9'/%3E%3Ccircle cx='400' cy='250' r='150' fill='%23f6d4b4'/%3E%3Crect x='345' y='115' width='110' height='190' rx='55' fill='%235b3a78'/%3E%3Cpath d='M320 245 Q320 335 400 335 Q480 335 480 245' fill='none' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Cpath d='M400 335 V390 M350 390 H450' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Ccircle cx='375' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='375' cy='190' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='190' r='8' fill='%23ffb35c'/%3E%3Ctext x='400' y='465' font-family='Arial,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='%235b3a78'%3EMIC LAB%3C/text%3E%3C/svg%3E'"><span class="product-tag">輕巧入門</span></div>
+ <div class="product-info"><div class="product-category">DJI MIC SERIES</div><h3>DJI Mic Mini 無線麥克風</h3><p class="product-desc">輕巧收音選擇，適合日常短影音與隨身創作。價格為原型示意。</p>
+ <div class="product-detail-actions"><button class="detail-button" type="button" data-detail="DJI Mic Mini 無線麥克風">查看產品詳情</button></div><div class="product-bottom"><span class="price">NT$ 2,990</span><button class="add-button" data-product="DJI Mic Mini 無線麥克風" data-price="2990">加入購物車 +</button></div></div></article>
+<article class="product-card" data-category="vlog video interview" data-name="RØDE Wireless ME 無線麥克風">
+ <div class="product-image"><img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&amp;fit=crop&amp;w=800&amp;q=85" alt="錄音與音訊設備" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23fff0d9'/%3E%3Ccircle cx='400' cy='250' r='150' fill='%23f6d4b4'/%3E%3Crect x='345' y='115' width='110' height='190' rx='55' fill='%235b3a78'/%3E%3Cpath d='M320 245 Q320 335 400 335 Q480 335 480 245' fill='none' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Cpath d='M400 335 V390 M350 390 H450' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Ccircle cx='375' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='375' cy='190' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='190' r='8' fill='%23ffb35c'/%3E%3Ctext x='400' y='465' font-family='Arial,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='%235b3a78'%3EMIC LAB%3C/text%3E%3C/svg%3E'"><span class="product-tag">簡易收音</span></div>
+ <div class="product-info"><div class="product-category">WIRELESS AUDIO</div><h3>RØDE Wireless ME 無線麥克風</h3><p class="product-desc">適合單人拍攝、訪談與內容創作；購買前確認手機或相機所需接頭。</p>
+ <div class="product-detail-actions"><button class="detail-button" type="button" data-detail="RØDE Wireless ME 無線麥克風">查看產品詳情</button></div><div class="product-bottom"><span class="price">NT$ 4,290</span><button class="add-button" data-product="RØDE Wireless ME 無線麥克風" data-price="4290">加入購物車 +</button></div></div></article>
+<article class="product-card" data-category="video interview" data-name="BOYA BY-M1 領夾式麥克風">
+ <div class="product-image"><img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&amp;fit=crop&amp;w=800&amp;q=85" alt="領夾式麥克風" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23fff0d9'/%3E%3Ccircle cx='400' cy='250' r='150' fill='%23f6d4b4'/%3E%3Crect x='345' y='115' width='110' height='190' rx='55' fill='%235b3a78'/%3E%3Cpath d='M320 245 Q320 335 400 335 Q480 335 480 245' fill='none' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Cpath d='M400 335 V390 M350 390 H450' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Ccircle cx='375' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='375' cy='190' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='190' r='8' fill='%23ffb35c'/%3E%3Ctext x='400' y='465' font-family='Arial,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='%235b3a78'%3EMIC LAB%3C/text%3E%3C/svg%3E'"><span class="product-tag">有線入門</span></div>
+ <div class="product-info"><div class="product-category">WIRED MICROPHONE</div><h3>BOYA BY-M1 領夾式麥克風</h3><p class="product-desc">有線領夾式收音入門選擇，請確認接口與轉接需求。</p>
+ <div class="product-detail-actions"><button class="detail-button" type="button" data-detail="BOYA BY-M1 領夾式麥克風">查看產品詳情</button></div><div class="product-bottom"><span class="price">NT$ 399</span><button class="add-button" data-product="BOYA BY-M1 領夾式麥克風" data-price="399">加入購物車 +</button></div></div></article>
+<article class="product-card" data-category="vlog video" data-name="戶外防風毛套組">
+ <div class="product-image"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=800&amp;q=85" alt="戶外拍攝情境" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23fff0d9'/%3E%3Ccircle cx='400' cy='250' r='150' fill='%23f6d4b4'/%3E%3Crect x='345' y='115' width='110' height='190' rx='55' fill='%235b3a78'/%3E%3Cpath d='M320 245 Q320 335 400 335 Q480 335 480 245' fill='none' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Cpath d='M400 335 V390 M350 390 H450' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Ccircle cx='375' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='375' cy='190' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='190' r='8' fill='%23ffb35c'/%3E%3Ctext x='400' y='465' font-family='Arial,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='%235b3a78'%3EMIC LAB%3C/text%3E%3C/svg%3E'"><span class="product-tag">戶外配件</span></div>
+ <div class="product-info"><div class="product-category">CREATOR ACCESSORIES</div><h3>戶外防風毛套組</h3><p class="product-desc">降低戶外風噪的配件示意組；實際適用型號須以供應商規格為準。</p>
+ <div class="product-detail-actions"><button class="detail-button" type="button" data-detail="戶外防風毛套組">查看產品詳情</button></div><div class="product-bottom"><span class="price">NT$ 490</span><button class="add-button" data-product="戶外防風毛套組" data-price="490">加入購物車 +</button></div></div></article>
+<article class="product-card" data-category="stream video" data-name="桌上型麥克風支架">
+ <div class="product-image"><img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&amp;fit=crop&amp;w=800&amp;q=85" alt="桌面創作設備" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23fff0d9'/%3E%3Ccircle cx='400' cy='250' r='150' fill='%23f6d4b4'/%3E%3Crect x='345' y='115' width='110' height='190' rx='55' fill='%235b3a78'/%3E%3Cpath d='M320 245 Q320 335 400 335 Q480 335 480 245' fill='none' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Cpath d='M400 335 V390 M350 390 H450' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Ccircle cx='375' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='375' cy='190' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='190' r='8' fill='%23ffb35c'/%3E%3Ctext x='400' y='465' font-family='Arial,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='%235b3a78'%3EMIC LAB%3C/text%3E%3C/svg%3E'"><span class="product-tag">桌面整理</span></div>
+ <div class="product-info"><div class="product-category">CREATOR ACCESSORIES</div><h3>桌上型麥克風支架</h3><p class="product-desc">適合桌面錄音、直播與線上會議；需確認夾具與桌面厚度。</p>
+ <div class="product-detail-actions"><button class="detail-button" type="button" data-detail="桌上型麥克風支架">查看產品詳情</button></div><div class="product-bottom"><span class="price">NT$ 890</span><button class="add-button" data-product="桌上型麥克風支架" data-price="890">加入購物車 +</button></div></div></article>
+<article class="product-card" data-category="interview video" data-name="雙人訪談收音方案">
+ <div class="product-image"><img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&amp;fit=crop&amp;w=800&amp;q=85" alt="訪談錄音設備" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23fff0d9'/%3E%3Ccircle cx='400' cy='250' r='150' fill='%23f6d4b4'/%3E%3Crect x='345' y='115' width='110' height='190' rx='55' fill='%235b3a78'/%3E%3Cpath d='M320 245 Q320 335 400 335 Q480 335 480 245' fill='none' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Cpath d='M400 335 V390 M350 390 H450' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Ccircle cx='375' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='375' cy='190' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='190' r='8' fill='%23ffb35c'/%3E%3Ctext x='400' y='465' font-family='Arial,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='%235b3a78'%3EMIC LAB%3C/text%3E%3C/svg%3E'"><span class="product-tag">雙人創作</span></div>
+ <div class="product-info"><div class="product-category">INTERVIEW KIT</div><h3>雙人訪談收音方案</h3><p class="product-desc">以雙人訪談需求為導向的方案示意，正式販售前須確認實際包含品項。</p>
+ <div class="product-detail-actions"><button class="detail-button" type="button" data-detail="雙人訪談收音方案">查看產品詳情</button></div><div class="product-bottom"><span class="price">NT$ 6,990</span><button class="add-button" data-product="雙人訪談收音方案" data-price="6990">加入購物車 +</button></div></div></article>
+<article class="product-card" data-category="vlog video stream" data-name="USB-C 轉接音訊配件">
+ <div class="product-image"><img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&amp;fit=crop&amp;w=800&amp;q=85" alt="音訊連接配件" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23fff0d9'/%3E%3Ccircle cx='400' cy='250' r='150' fill='%23f6d4b4'/%3E%3Crect x='345' y='115' width='110' height='190' rx='55' fill='%235b3a78'/%3E%3Cpath d='M320 245 Q320 335 400 335 Q480 335 480 245' fill='none' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Cpath d='M400 335 V390 M350 390 H450' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Ccircle cx='375' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='375' cy='190' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='190' r='8' fill='%23ffb35c'/%3E%3Ctext x='400' y='465' font-family='Arial,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='%235b3a78'%3EMIC LAB%3C/text%3E%3C/svg%3E'"><span class="product-tag">連接配件</span></div>
+ <div class="product-info"><div class="product-category">AUDIO ACCESSORIES</div><h3>USB-C 轉接音訊配件</h3><p class="product-desc">協助連接相容設備的配件示意；請先核對裝置型號與接口。</p>
+ <div class="product-detail-actions"><button class="detail-button" type="button" data-detail="USB-C 轉接音訊配件">查看產品詳情</button></div><div class="product-bottom"><span class="price">NT$ 350</span><button class="add-button" data-product="USB-C 轉接音訊配件" data-price="350">加入購物車 +</button></div></div></article>
+<article class="product-card" data-category="stream video" data-name="USB 桌上型收音麥克風">
+ <div class="product-image"><img src="https://images.unsplash.com/photo-1593078166032-c9e9c6e3a1d4?auto=format&amp;fit=crop&amp;w=800&amp;q=85" alt="桌上型麥克風" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23fff0d9'/%3E%3Ccircle cx='400' cy='250' r='150' fill='%23f6d4b4'/%3E%3Crect x='345' y='115' width='110' height='190' rx='55' fill='%235b3a78'/%3E%3Cpath d='M320 245 Q320 335 400 335 Q480 335 480 245' fill='none' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Cpath d='M400 335 V390 M350 390 H450' stroke='%235b3a78' stroke-width='22' stroke-linecap='round'/%3E%3Ccircle cx='375' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='160' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='375' cy='190' r='8' fill='%23ffb35c'/%3E%3Ccircle cx='425' cy='190' r='8' fill='%23ffb35c'/%3E%3Ctext x='400' y='465' font-family='Arial,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='%235b3a78'%3EMIC LAB%3C/text%3E%3C/svg%3E'"><span class="product-tag">直播推薦</span></div>
+ <div class="product-info"><div class="product-category">STREAM AUDIO</div><h3>USB 桌上型收音麥克風</h3><p class="product-desc">適合桌面語音、直播與線上會議，請確認作業系統與連接方式。</p>
+ <div class="product-detail-actions"><button class="detail-button" type="button" data-detail="USB 桌上型收音麥克風">查看產品詳情</button></div><div class="product-bottom"><span class="price">NT$ 1,690</span><button class="add-button" data-product="USB 桌上型收音麥克風" data-price="1690">加入購物車 +</button></div></div></article>
+        </div>
+
+        <p class="empty-state" id="emptyState">
+          找不到符合條件的商品，請更換搜尋關鍵字。
+        </p>
+      </div>
+    </section>
+
+
+    <!-- 選購指南：提供實用內容，適合社群宣傳導流 -->
+    <section class="guide-section" id="guide">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <h2>購買前，先確認這三件事</h2>
+            <p>用實用資訊幫助消費者做決定，而不是用倒數或誇大折扣催促下單。</p>
+          </div>
+        </div>
+        <div class="guide-grid">
+          <article class="guide-card">
+            <div class="guide-index">01 / DEVICE</div>
+            <h3>確認你的拍攝設備</h3>
+            <p>先確認手機、相機或電腦的接口、連接方式與支援需求。不同套裝及設備可能有不同的相容條件。</p>
+          </article>
+          <article class="guide-card">
+            <div class="guide-index">02 / CONTENT</div>
+            <h3>想清楚使用情境</h3>
+            <p>單人 Vlog、雙人訪談、戶外拍攝與直播的需求不同；先決定收音人數、環境與使用方式，再比較方案。</p>
+          </article>
+          <article class="guide-card">
+            <div class="guide-index">03 / PACKAGE</div>
+            <h3>核對套裝與售後資訊</h3>
+            <p>購買前應看清楚盒裝內容、配件是否另購、保固條件、出貨時間與退換貨規則，避免只依商品主圖判斷。</p>
+          </article>
+        </div>
+        <div class="trust-panel">
+          <div>
+            <h3>我們重視資訊透明</h3>
+            <p>不使用虛構倒數、假庫存、假評價或未經證實的效果承諾。若正式販售，將以實際供應資料公告售價、庫存、出貨、保固及退換貨規則。</p>
+          </div>
+          <div>
+            <h3>正式上線前需補齊</h3>
+            <ul>
+              <li>真實經營者名稱與有效聯絡方式</li>
+              <li>商品實拍、規格來源、售價與庫存</li>
+              <li>配送、付款、退換貨、保固與隱私政策</li>
+              <li>若宣稱官方授權或代理，需有可查證依據</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 常見問題 -->
+    <section class="guide-section" id="faq" style="padding-top: 8px;">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <h2>常見問題</h2>
+            <p>把消費者購買前最在意的問題，直接說清楚。</p>
+          </div>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>MIC LAB. 是 DJI 官方網站嗎？</summary>
+            <p>不是。本網站是 MIC LAB. 的品牌概念展示，並非 DJI 官方網站；品牌關係或授權狀況不得在未取得證明前作出暗示。</p>
+          </details>
+          <details>
+            <summary>網站上的商品可以直接下單嗎？</summary>
+            <p>目前此頁為互動原型，可體驗加入購物車、調整數量與模擬結帳；不會實際收款或建立真實訂單。</p>
+          </details>
+          <details>
+            <summary>怎麼確認商品適不適合我的設備？</summary>
+            <p>請先核對商品的完整型號、套裝內容、接口及官方相容性資訊。正式商品頁應提供可查證的規格來源，避免只以「通用」描述帶過。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 品牌理念 -->
+    <section id="about">
+      <div class="container feature-panel">
+        <div class="section-heading">
+          <div>
+            <h2>好的設備，讓創作更專注。</h2>
+            <p>我們重視的不只是規格，而是設備如何融入你的創作。</p>
+          </div>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-item">
+            <div class="feature-number">01 / DISCOVER</div>
+            <h3>依照情境選購</h3>
+            <p>
+              從戶外 Vlog 到雙人訪談，
+              依照實際需求找到適合的設備。
+            </p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-number">02 / EXPERIENCE</div>
+            <h3>重視實際體驗</h3>
+            <p>
+              透過收音示範、規格比較及使用說明，
+              幫助你理解產品差異。
+            </p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-number">03 / CREATE</div>
+            <h3>讓創作更有效率</h3>
+            <p>
+              選擇符合需求的設備，
+              把更多時間留給真正重要的內容。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 行動呼籲 -->
+    <section class="cta">
+      <div class="container">
+        <h2>準備好，讓作品更進一步了嗎？</h2>
+        <p>從你的創作情境開始，尋找下一件合適的設備。</p>
+        <a href="#products" class="button">開始探索商品 →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 頁尾 -->
+  <footer>
+    <div class="container">
+      <div class="footer-main">
+        <div>
+          <a href="" class="logo">MIC LAB<span>.</span></a>
+          <p>為每一位創作者，尋找更好的聲音。</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#categories">商品分類</a>
+          <a href="#products">熱門商品</a>
+          <a href="#about">品牌理念</a>
+          <a href="#faq">常見問題</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 MIC LAB. 品牌概念展示。
+        本網站為展示原型，非 DJI 官方網站，亦未提供真實下單與付款服務。
+        商品圖片可能為情境示意；正式上線前請核實商品資訊、供應來源及所有交易政策。
+      </div>
+    </div>
+  </footer>
+
+  <div class="promo-ad-backdrop" id="promoAd" aria-hidden="true">
+    <section class="promo-ad-card" role="dialog" aria-modal="true" aria-labelledby="promoAdTitle">
+      <button class="promo-ad-close" id="closePromoAd" aria-label="關閉促銷廣告">×</button>
+      <span class="promo-ad-kicker">MIC LAB 萬聖節限定 · 主打推薦</span>
+      <h2 id="promoAdTitle">收音升級趁現在！</h2>
+      <p class="promo-sub">雙人創作・Vlog・短影音，一套搞定收音需求</p>
+      <svg class="promo-ad-art" viewBox="0 0 420 230" role="img" aria-label="雙發射器無線麥克風商品示意圖"><defs><linearGradient id="promoMic" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#67427e"></stop><stop offset="1" stop-color="#251831"></stop></linearGradient></defs><path d="M35 180 Q210 225 385 180 L355 210 Q210 245 65 210Z" fill="#f36c32"></path><circle cx="210" cy="105" r="92" fill="#ffcf83"></circle><circle cx="210" cy="105" r="72" fill="#fff1d9"></circle><rect x="110" y="64" width="72" height="105" rx="20" fill="url(#promoMic)" transform="rotate(-9 146 116)"></rect><rect x="238" y="64" width="72" height="105" rx="20" fill="url(#promoMic)" transform="rotate(9 274 116)"></rect><rect x="124" y="78" width="42" height="43" rx="8" fill="#17131e"></rect><rect x="254" y="78" width="42" height="43" rx="8" fill="#17131e"></rect><circle cx="145" cy="144" r="6" fill="#ffb65b"></circle><circle cx="275" cy="144" r="6" fill="#ffb65b"></circle><path d="M180 113 Q210 75 240 113" fill="none" stroke="#f36c32" stroke-width="8" stroke-linecap="round"></path><path d="M65 45 l13 -25 13 25 25 13 -25 13 -13 25 -13 -25 -25 -13Z" fill="#fff"></path><path d="M340 45 l9 -18 9 18 18 9 -18 9 -9 18 -9 -18 -18 -9Z" fill="#fff"></path></svg>
+      <div class="promo-ad-price"><del>原型參考價 NT$ 11,990</del><strong>NT$ 10,490</strong></div>
+      <div class="promo-ad-bonus">下單贈送｜南瓜造型收納小袋 1 個</div>
+      <button class="promo-ad-cta" id="promoAdShop">立即看商品優惠 →</button>
+      <button class="promo-ad-dismiss" id="promoAdLater">先逛逛，稍後再說</button>
+      <p class="trust-note" style="margin: 10px auto 0 auto;">活動價格及贈品為課程展示設定，非實際販售承諾。</p>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="detail-backdrop" id="detailModal" aria-hidden="true"><section class="detail-modal" role="dialog" aria-modal="true" aria-labelledby="detailTitle"><button class="modal-close" id="closeDetail" aria-label="關閉商品詳情">×</button><span class="detail-label" id="detailCategory">MIC LAB 商品指南</span><h2 id="detailTitle">商品詳情</h2><p id="detailIntro"></p><div class="detail-product-hero"><svg class="detail-product-art" viewBox="0 0 420 230" role="img" aria-label="MIC LAB 無線麥克風商品示意圖"><defs><linearGradient id="micGrad" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#65427c"></stop><stop offset="1" stop-color="#2b1c3d"></stop></linearGradient></defs><circle cx="210" cy="112" r="91" fill="#ffd39b"></circle><rect x="105" y="70" width="68" height="92" rx="18" fill="url(#micGrad)"></rect><rect x="247" y="70" width="68" height="92" rx="18" fill="url(#micGrad)"></rect><rect x="119" y="82" width="40" height="42" rx="8" fill="#21192b"></rect><rect x="261" y="82" width="40" height="42" rx="8" fill="#21192b"></rect><circle cx="139" cy="142" r="6" fill="#ffb45e"></circle><circle cx="281" cy="142" r="6" fill="#ffb45e"></circle><path d="M173 115 Q210 75 247 115" fill="none" stroke="#f17836" stroke-width="7" stroke-linecap="round"></path><text x="210" y="204" text-anchor="middle" font-size="20" font-weight="800" fill="#51345e">MIC LAB · WIRELESS AUDIO</text></svg><div class="detail-price-panel"><span class="detail-label">萬聖節主打優惠</span><strong id="detailPrice">NT$ 10,490</strong><p class="detail-promo-line" id="detailPromo">購買主打商品贈南瓜造型收納小袋 1 個</p><p class="trust-note">價格與贈品為網站展示活動設定，正式販售前請確認。</p></div></div><div class="detail-grid"><div class="detail-box"><h3>主要特色</h3><ul id="detailFeatures"></ul></div><div class="detail-box"><h3>建議操作方式</h3><ol id="detailSteps"></ol></div></div><h3>購買前提醒</h3><p id="detailCompatibility"></p><p class="trust-note">商品資訊以此概念網站現有內容整理；未提供的精確規格、盒裝內容與相容性不會自行假設，正式上線前請依原廠資料核實。</p><button class="button" id="detailAdd">加入購物車 +</button></section></div>
+
+  <div class="checkout-backdrop" id="cartModal" aria-hidden="true"><section class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="cartTitle"><button class="modal-close" id="closeCart" aria-label="關閉">×</button><h2 id="cartTitle">你的購物車</h2><p class="demo-notice">互動原型｜以下價格均為示意價格，尚未連接真實庫存或金流，不會實際扣款。</p><div id="cartItems"></div><div class="cart-total">商品小計 <strong id="cartSubtotal">NT$ 0</strong></div><button class="button primary-button full-button" id="goCheckout">前往結帳</button><p class="cart-empty-note" id="cartEmpty">購物車目前是空的，先挑選適合你的收音設備吧。</p>
+  <form id="checkoutForm" hidden=""><h3>收件與聯絡資訊</h3><label>收件人姓名<input name="name" required="" autocomplete="name" placeholder="請輸入姓名"></label><label>電子郵件<input name="email" type="email" required="" autocomplete="email" placeholder="name@example.com"></label><label>聯絡電話<input name="phone" type="tel" required="" autocomplete="tel" placeholder="09xx-xxx-xxx"></label><label>配送方式<select name="shipping" required=""><option value="">請選擇配送方式</option><option>宅配到府（示意）</option><option>超商取貨（示意）</option></select></label><h3>付款方式（模擬）</h3><label class="payment-option"><input type="radio" name="payment" value="信用卡（模擬）" required=""> 信用卡（模擬，不輸入卡號）</label><label class="payment-option"><input type="radio" name="payment" value="轉帳（模擬）"> 銀行轉帳（模擬）</label><label class="payment-option"><input type="radio" name="payment" value="貨到付款（模擬）"> 貨到付款（模擬）</label><p class="demo-notice">為保護個資，這個展示版不收集信用卡號，也不會傳送或儲存你的表單資料。</p><button class="button primary-button full-button" type="submit">確認模擬訂單</button></form><div id="orderSuccess" class="order-success" hidden=""><h3>模擬訂單已建立</h3><p id="orderSummary"></p><p>這不是實際訂單，沒有付款或出貨。正式上線前需串接安全金流、訂單後端與隱私政策。</p><button class="button" id="finishOrder">返回網站</button></div></section></div>
+
+
+  <!-- Visual-only fictional hacking simulation; no network actions or data access. -->
+  <div id="hackSimOverlay" role="dialog" aria-modal="true" aria-labelledby="hackSimTitle">
+    <div class="hack-sim-panel">
+      <div class="hack-sim-top">
+        <span>MIC LAB // SECURITY CONSOLE</span>
+        <span class="hack-sim-lights" aria-hidden="true"><i></i><i></i><i></i></span>
+      </div>
+      <div class="hack-sim-body">
+        <div class="hack-sim-kicker">CYBER INCIDENT DEMO · VISUAL EFFECT ONLY</div>
+        <h1 class="hack-sim-title" id="hackSimTitle">SIMULATED BREACH</h1>
+        <p class="hack-sim-desc">正在播放「智慧商店遭入侵」情境動畫。以下進度、事件與數據皆為虛構展示，不會連線攻擊或存取任何資料。</p>
+        <div class="hack-sim-log" id="hackSimLog" aria-live="polite">
+          <div class="muted">[SIM] Initializing cinematic demo...</div>
+        </div>
+        <div class="hack-sim-progress"><span id="hackSimProgress"></span></div>
+        <div class="hack-sim-status"><span id="hackSimStatus">SIMULATION STARTING</span><span id="hackSimPercent">0%</span></div>
+        <div class="hack-sim-actions" id="hackSimActions" hidden="">
+          <button type="button" id="hackSimEnter">查看模擬入侵後網站</button>
+          <button type="button" class="secondary" id="hackSimRestore">恢復正常畫面</button>
+        </div>
+        <div class="hack-sim-footnote">此效果僅為網站前端視覺模擬。沒有真實入侵、資料竊取、密碼蒐集或後台操作。</div>
+      </div>
+    </div>
+  </div>
+  <div id="hackSimBadge" hidden="">⚠ SIMULATED BREACH · DEMO</div>
+
+  <script>
+    // 搜尋欄開關
+    const searchToggle = document.getElementById("searchToggle");
+    const searchPanel = document.getElementById("searchPanel");
+    const searchInput = document.getElementById("searchInput");
+    const productCards = [
+      ...document.querySelectorAll(".product-card")
+    ];
+    const emptyState = document.getElementById("emptyState");
+
+    searchToggle.addEventListener("click", () => {
+      searchPanel.classList.toggle("active");
+      const isOpen = searchPanel.classList.contains("active");
+      searchToggle.setAttribute("aria-expanded", String(isOpen));
+
+      if (isOpen) {
+        searchInput.focus();
+      } else {
+        searchInput.value = "";
+        applyFilters();
+      }
+    });
+
+    // 商品搜尋與分類篩選
+    let activeFilter = "all";
+
+    function applyFilters() {
+      const keyword = searchInput.value.trim().toLowerCase();
+      let visibleCount = 0;
+
+      productCards.forEach(card => {
+        // 搜尋商品名稱、分類與商品說明，支援「直播」「收音」等需求詞。
+        const searchableText = [
+          card.dataset.name || "",
+          card.dataset.category || "",
+          card.innerText || ""
+        ].join(" ").toLowerCase();
+        const category = (card.dataset.category || "").split(/\s+/);
+        const matchesKeyword = searchableText.includes(keyword);
+        const matchesCategory =
+          activeFilter === "all" ||
+          category.includes(activeFilter);
+
+        const visible = matchesKeyword && matchesCategory;
+        card.style.display = visible ? "" : "none";
+
+        if (visible) visibleCount++;
+      });
+
+      emptyState.style.display =
+        visibleCount === 0 ? "block" : "none";
+    }
+
+    searchInput.addEventListener("input", applyFilters);
+
+    // 鍵盤使用者可用 Esc 關閉搜尋並回到搜尋按鈕。
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && searchPanel.classList.contains("active")) {
+        searchPanel.classList.remove("active");
+        searchToggle.setAttribute("aria-expanded", "false");
+        searchInput.value = "";
+        applyFilters();
+        searchToggle.focus();
+      }
+    });
+
+    document.querySelectorAll("[data-filter]").forEach(button => {
+      button.addEventListener("click", () => {
+        activeFilter = button.dataset.filter;
+
+        document.querySelectorAll("[data-filter]").forEach(item => {
+          item.classList.toggle("active", item === button);
+        });
+
+        applyFilters();
+      });
+    });
+
+    // 點擊首頁情境卡，切換商品分類
+    document.querySelectorAll("[data-category-link]").forEach(link => {
+      link.addEventListener("click", () => {
+        activeFilter = link.dataset.categoryLink;
+
+        document.querySelectorAll("[data-filter]").forEach(button => {
+          button.classList.toggle(
+            "active",
+            button.dataset.filter === activeFilter
+          );
+        });
+
+        applyFilters();
+      });
+    });
+
+    // 前端示範購物車與結帳流程；價格為示意，不會產生真實交易。
+    const cart = new Map();
+    const cartCountLabel = document.getElementById("cartCount");
+    const toast = document.getElementById("toast");
+    const cartModal = document.getElementById("cartModal");
+    const cartItems = document.getElementById("cartItems");
+    const cartSubtotal = document.getElementById("cartSubtotal");
+    const cartEmpty = document.getElementById("cartEmpty");
+    const checkoutForm = document.getElementById("checkoutForm");
+    let toastTimer;
+    function showToast(message) { toast.textContent = message; toast.classList.add("show"); clearTimeout(toastTimer); toastTimer = setTimeout(() => toast.classList.remove("show"), 2200); }
+    const money = value => "NT$ " + value.toLocaleString("zh-TW");
+    function renderCart() {
+      let count = 0, subtotal = 0;
+      cartItems.innerHTML = "";
+      cart.forEach((item, name) => {
+        count += item.qty; subtotal += item.price * item.qty;
+        const row = document.createElement("div"); row.className = "cart-row";
+        const info = document.createElement("div");
+        const title = document.createElement("strong"); title.textContent = name;
+        const price = document.createElement("p"); price.textContent = money(item.price) + "／件";
+        info.append(title, price);
+        const controls = document.createElement("div"); controls.className = "qty-controls";
+        const minus = document.createElement("button"); minus.type="button"; minus.textContent="−"; minus.setAttribute("aria-label", "減少" + name + "數量");
+        const qty = document.createElement("span"); qty.textContent=item.qty;
+        const plus = document.createElement("button"); plus.type="button"; plus.textContent="+"; plus.setAttribute("aria-label", "增加" + name + "數量");
+        const remove = document.createElement("button"); remove.type="button"; remove.textContent="移除"; remove.className="remove-item";
+        minus.addEventListener("click",()=>{ if(item.qty>1)item.qty--;else cart.delete(name);renderCart(); });
+        plus.addEventListener("click",()=>{item.qty++;renderCart();}); remove.addEventListener("click",()=>{cart.delete(name);renderCart();});
+        controls.append(minus,qty,plus,remove); row.append(info,controls); cartItems.append(row);
+      });
+      cartCountLabel.textContent = count; cartSubtotal.textContent = money(subtotal);
+      cartEmpty.hidden = count !== 0; document.getElementById("goCheckout").disabled = count === 0;
+    }
+    function openCart(){ cartModal.classList.add("open"); cartModal.setAttribute("aria-hidden","false"); document.getElementById("closeCart").focus(); }
+    function closeCart(){ cartModal.classList.remove("open"); cartModal.setAttribute("aria-hidden","true"); document.getElementById("cartButton").focus(); }
+    document.querySelectorAll("[data-product]").forEach(button => button.addEventListener("click",()=>{
+      const name=button.dataset.product, price=Number(button.dataset.price);
+      if(!cart.has(name)) cart.set(name,{price,qty:0}); cart.get(name).qty++; renderCart(); showToast(name+" 已加入購物車");
+    }));
+    document.getElementById("cartButton").addEventListener("click",openCart);
+    document.getElementById("closeCart").addEventListener("click",closeCart);
+    cartModal.addEventListener("click",event=>{if(event.target===cartModal)closeCart();});
+    document.addEventListener("keydown",event=>{if(event.key==="Escape"&&cartModal.classList.contains("open"))closeCart();});
+    document.getElementById("goCheckout").addEventListener("click",()=>{checkoutForm.hidden=false;checkoutForm.scrollIntoView({behavior:"smooth",block:"start"});});
+    checkoutForm.addEventListener("submit",event=>{event.preventDefault(); if(!checkoutForm.reportValidity())return;
+      const data=new FormData(checkoutForm); const count=[...cart.values()].reduce((sum,item)=>sum+item.qty,0);
+      document.getElementById("orderSummary").textContent=`收件人：${data.get("name")}；商品數量：${count} 件；金額：${cartSubtotal.textContent}；付款方式：${data.get("payment")}。`;
+      checkoutForm.hidden=true; document.getElementById("cartItems").hidden=true; document.querySelector(".cart-total").hidden=true; document.getElementById("goCheckout").hidden=true; cartEmpty.hidden=true; document.getElementById("orderSuccess").hidden=false;
+    });
+    document.getElementById("finishOrder").addEventListener("click",()=>{cart.clear();renderCart();checkoutForm.reset();checkoutForm.hidden=true;document.getElementById("cartItems").hidden=false;document.querySelector(".cart-total").hidden=false;document.getElementById("goCheckout").hidden=false;document.getElementById("orderSuccess").hidden=true;closeCart();});
+
+    // 商品詳情：由現有商品資訊整理操作情境，未提供的規格明確提醒核實。
+    const productDetails = {
+      "DJI Mic 2 無線麥克風（雙發射器套裝）": {category:"雙人創作／無線收音", intro:"適合雙人訪談、Vlog 與短影音的收音情境。此頁為概念展示，實際套裝內容請以供應商資料為準。", features:["雙人對談情境導向，適合訪談與共同入鏡內容。","無線收音配置可減少拍攝時被線材牽制的情況。","可依拍攝情境規劃收音位置與收音人數。"],steps:["先確認相機或手機的接口，以及套裝內接收器／轉接配件。","依原廠說明完成發射器與接收器配對。","將麥克風固定在說話者衣領附近，避開摩擦衣料的位置。","錄製前試錄並回放，確認音量、環境噪音與兩位說話者的聲音。"],compat:"請確認實際套裝型號、連接線材、手機／相機支援情況及盒裝配件。"},
+      "DJI Mic Mini 無線麥克風": {category:"輕巧入門／隨身創作", intro:"以輕巧、方便攜帶的日常短影音與 Vlog 情境為主。頁面價格及圖片皆屬概念展示。", features:["適合外出拍攝、街頭短影音與日常 Vlog。","體積小，方便納入隨身拍攝流程。","適合先規劃單人或多人收音需求再挑選套裝。"],steps:["確認購買版本與手機／相機連接方式。","依產品說明完成配對或連接。","將麥克風固定在靠近聲源、且不會摩擦衣物的位置。","正式拍攝前試錄並檢查回放音量與背景聲。"],compat:"不同套裝可能包含不同配件；請核對裝置接口、轉接需求與原廠相容性資訊。"},
+      "RØDE Wireless ME 無線麥克風": {category:"無線音訊／訪談拍攝", intro:"可作為單人拍攝、訪談與內容創作的收音選項；此處不替代原廠規格表。", features:["適合訪談、口播及一般內容創作情境。","無線配置有助於拍攝時保持活動彈性。","購買前先釐清要接手機、相機或電腦。"],steps:["確認設備端口及需要的線材。","依原廠說明連接設備並檢查輸入音源。","調整麥克風位置，避免衣物碰撞或風直接吹向收音處。","錄製短片並戴耳機回聽，確認聲音沒有過小或爆音。"],compat:"請核對手機／相機所需接頭、產品版本與原廠相容性列表。"},
+      "BOYA BY-M1 領夾式麥克風": {category:"有線入門／領夾收音", intro:"有線領夾式麥克風概念商品，適合想了解入門口播與訪談收音的使用者。", features:["領夾式設計，方便固定在說話者衣物附近。","有線連接，不需以無線配對作為基本操作流程。","可用於口播、訪談等固定或近距離收音情境。"],steps:["先確認錄音設備的接口，以及是否需要轉接頭。","依麥克風說明確認設備端設定，再插入接口。","將麥克風夾在胸口附近，避免碰到項鍊或衣料。","先錄一段測試音並回放確認收音正常。"],compat:"不同手機、相機與電腦的接口及設定可能不同，請先核對原廠說明與轉接需求。"},
+      "戶外防風毛套組": {category:"戶外配件／風噪管理", intro:"此商品為戶外防風配件示意。防風配件的實際效果與適用性會受到麥克風型號及環境影響。", features:["設計用途是協助降低戶外風吹造成的風噪。","適合將戶外拍攝環境納入收音規劃。","需依麥克風形狀與固定方式挑選。"],steps:["先確認毛套尺寸與麥克風型號相符。","依產品設計套上並確認不遮擋必要的收音部位。","在實際風勢下先試錄一段。","回放比較效果，並視情況調整拍攝方向或收音位置。"],compat:"此頁未提供確切適用型號，請勿只憑圖片判定能否安裝。"},
+      "桌上型麥克風支架": {category:"桌面配件／直播與會議", intro:"面向桌面錄音、直播與線上會議的支架類商品示意。", features:["協助固定麥克風位置，讓桌面配置更有條理。","可依桌面空間與使用姿勢安排收音位置。","安裝前需確認支架結構、夾具及承重條件。"],steps:["量測桌面厚度並確認夾具可固定。","依商品說明安裝底座與支臂。","固定麥克風並確認螺絲、接頭已鎖緊。","輕推測試穩定度，調整到嘴部附近且不妨礙畫面的位置。"],compat:"本頁未列出支架尺寸、螺牙規格與承重值，正式選購前須核對。"},
+      "雙人訪談收音方案": {category:"訪談方案／雙人創作", intro:"依雙人訪談需求規劃的方案示意，並非已核實的固定盒裝組合。", features:["以兩位說話者的收音需求作為規劃起點。","適合訪談、對談影片與共同創作內容。","可先列出設備端口、收音人數及拍攝環境再選配。"],steps:["確認兩位說話者與錄音設備的配置。","依實際清單連接收音設備並檢查左右／各聲道。","兩人分別試講，確認音量差異與環境噪音。","正式錄影前回放測試片段，確定兩人的聲音皆清楚。"],compat:"正式販售前必須確認方案包含的實際品項、數量、接頭與相容設備。"},
+      "USB-C 轉接音訊配件": {category:"連接配件／接口確認", intro:"協助連接相容設備的配件示意；USB-C 外觀相同不代表所有裝置都支援相同音訊功能。", features:["用於特定接口與音訊設備間的連接情境。","購買前需確認設備端口及音訊輸入需求。","應以裝置與配件的相容性資料為準。"],steps:["確認手機／電腦的完整型號與 USB-C 音訊支援。","核對配件規格與麥克風端接頭。","連接後到錄音或相機應用程式確認輸入來源。","錄一段測試音並回放，確認訊號正常。"],compat:"請核對裝置型號、系統限制與配件規格，不能只依接口形狀判斷。"},
+      "USB 桌上型收音麥克風": {category:"桌面收音／直播與會議", intro:"適合桌面語音、直播或線上會議情境的商品示意。實際連接方式須以商品型號為準。", features:["適合固定桌面位置的口播、會議與直播用途。","可透過合理的麥克風距離改善收音一致性。","應先確認作業系統與連接方式。"],steps:["依產品說明將麥克風連接至電腦或相容設備。","在系統或應用程式的音訊設定中選擇正確輸入裝置。","將麥克風放在穩定位置，避免靠近鍵盤敲擊或風扇噪音。","試錄並回放，調整輸入音量與麥克風距離。"],compat:"頁面未提供確切型號、指向性與規格，請以供應商或原廠資料為準。"}
+    };
+    const detailModal=document.getElementById("detailModal"); let currentDetailName="";
+    function openDetail(name){const d=productDetails[name];if(!d)return;currentDetailName=name;document.getElementById("detailCategory").textContent=d.category;document.getElementById("detailTitle").textContent=name;document.getElementById("detailIntro").textContent=d.intro;document.getElementById("detailCompatibility").textContent=d.compat;const priceButton=document.querySelector('[data-product="'+CSS.escape(name)+'"]');const price=priceButton?Number(priceButton.dataset.price):0;document.getElementById("detailPrice").textContent=price?"NT$ "+price.toLocaleString("zh-TW"):"請洽詢";document.getElementById("detailPromo").textContent=name.includes("DJI Mic 2")?"萬聖節限定：購買贈南瓜造型收納小袋 1 個":"活動贈品依商品頁與活動條款為準";
+      const features=document.getElementById("detailFeatures");features.replaceChildren();d.features.forEach(t=>{const li=document.createElement("li");li.textContent=t;features.append(li);});
+      const steps=document.getElementById("detailSteps");steps.replaceChildren();d.steps.forEach(t=>{const li=document.createElement("li");li.textContent=t;steps.append(li);});detailModal.classList.add("open");detailModal.setAttribute("aria-hidden","false");document.getElementById("closeDetail").focus();}
+    function closeDetail(){detailModal.classList.remove("open");detailModal.setAttribute("aria-hidden","true");}
+    document.querySelectorAll("[data-detail]").forEach(button=>button.addEventListener("click",()=>openDetail(button.dataset.detail)));
+    document.getElementById("closeDetail").addEventListener("click",closeDetail);
+    detailModal.addEventListener("click",event=>{if(event.target===detailModal)closeDetail();});
+    document.addEventListener("keydown",event=>{if(event.key==="Escape"&&detailModal.classList.contains("open"))closeDetail();});
+    document.getElementById("detailAdd").addEventListener("click",()=>{const button=document.querySelector('[data-product="'+CSS.escape(currentDetailName)+'"]');if(button){button.click();closeDetail();}});
+
+
+    // 首次進站主打商品廣告：可關閉；點擊主 CTA 直接開啟商品詳情。
+    const promoAd=document.getElementById("promoAd");
+    function closePromoAd(){promoAd.classList.remove("show");promoAd.setAttribute("aria-hidden","true");}
+    function openPromoProduct(){closePromoAd();openDetail("DJI Mic 2 無線麥克風（雙發射器套裝）");}
+    document.getElementById("closePromoAd").addEventListener("click",closePromoAd);
+    document.getElementById("promoAdLater").addEventListener("click",closePromoAd);
+    document.getElementById("promoAdShop").addEventListener("click",openPromoProduct);
+    promoAd.addEventListener("click",event=>{if(event.target===promoAd)closePromoAd();});
+    document.addEventListener("keydown",event=>{if(event.key==="Escape"&&promoAd.classList.contains("show"))closePromoAd();});
+    window.addEventListener("load",()=>{setTimeout(()=>{promoAd.classList.add("show");promoAd.setAttribute("aria-hidden","false");document.getElementById("closePromoAd").focus();},450);});
+
+
+
+    // AI 智慧商店前端互動示範（非即時 AI／非真實庫存）
+    const smartRecommendBtn = document.getElementById('smartRecommendBtn');
+    if (smartRecommendBtn) {
+      smartRecommendBtn.addEventListener('click', () => {
+        const scenario = document.getElementById('smartUseCase').value;
+        const result = document.getElementById('smartRecommendResult');
+        const recommendations = {
+          vlog: '<strong>推薦方向：DJI Mic 2</strong><br>適合需要移動拍攝、雙人收音與較完整創作彈性的情境。可先確認手機／相機接口與套裝內容。',
+          short: '<strong>推薦方向：DJI Mic Mini</strong><br>適合短影音與日常輕量拍攝。建議依拍攝設備確認接收端與轉接方式。',
+          interview: '<strong>推薦方向：DJI Mic 2 雙發射器套裝</strong><br>雙人訪談可優先考慮雙發射器配置，拍攝前記得測試兩位講者的收音音量。',
+          stream: '<strong>推薦方向：USB 桌上型收音麥克風</strong><br>適合固定桌面直播與遊戲語音；選購前請確認作業系統、連接介面與桌面空間。'
+        };
+        result.innerHTML = recommendations[scenario] + '<br><small>此為依情境規則產生的示範推薦，並非連接外部 AI 模型。</small>';
+      });
+    }
+    const smartAddFeatured = document.getElementById('smartAddFeatured');
+    // 此按鈕同時使用既有的 data-product 購物車事件，避免重複加入商品。
+    if (smartAddFeatured) smartAddFeatured.addEventListener('click', () => {
+      document.getElementById('smartCartResult').textContent = '主打商品已加入購物車。請查看購物車確認數量，再使用原有模擬結帳功能。';
+    });
+    const smartOpenCart = document.getElementById('smartOpenCart');
+    if (smartOpenCart) smartOpenCart.addEventListener('click', () => {
+      if (typeof openCart === 'function') openCart();
+      else document.getElementById('cartButton')?.click();
+    });
+
+    // 入口身分選擇：買家與賣家為兩個獨立介面，預設先顯示選擇頁。
+    const roleGate = document.getElementById('roleGate');
+    const managerDashboard = document.getElementById('managerDashboard');
+    function chooseRole(role) {
+      document.body.classList.remove('buyer-mode','seller-mode');
+      document.body.classList.add(role + '-mode');
+      roleGate.hidden = true;
+      if (role === 'seller') {
+        managerDashboard.hidden = false;
+        window.scrollTo({top:0,behavior:'instant'});
+      } else {
+        managerDashboard.hidden = true;
+        window.scrollTo({top:0,behavior:'instant'});
+      }
+    }
+    function returnToRoleGate() {
+      document.body.classList.remove('buyer-mode','seller-mode');
+      managerDashboard.hidden = true;
+      roleGate.hidden = false;
+      window.scrollTo({top:0,behavior:'instant'});
+    }
+    document.getElementById('enterBuyer')?.addEventListener('click',()=>chooseRole('buyer'));
+    document.getElementById('enterSeller')?.addEventListener('click',()=>chooseRole('seller'));
+    document.getElementById('managerModeExit')?.addEventListener('click',returnToRoleGate);
+    document.getElementById('roleSwitchBuyer')?.addEventListener('click',returnToRoleGate);
+
+
+    // 只播放虛構的前端入侵動畫，不發送網路請求、不讀取或修改使用者資料。
+    (function initHackSimulation() {
+      const overlay = document.getElementById('hackSimOverlay');
+      const log = document.getElementById('hackSimLog');
+      const progress = document.getElementById('hackSimProgress');
+      const percent = document.getElementById('hackSimPercent');
+      const status = document.getElementById('hackSimStatus');
+      const actions = document.getElementById('hackSimActions');
+      const badge = document.getElementById('hackSimBadge');
+      const enterBtn = document.getElementById('hackSimEnter');
+      const restoreBtn = document.getElementById('hackSimRestore');
+      if (!overlay) return;
+
+      const events = [
+        '[SIM] Establishing fictional connection to MIC LAB demo...',
+        '[SIM] Scanning sample storefront interface...',
+        '[SIM] Loading mock buyer product catalogue...',
+        '[SIM] Reading fabricated inventory dashboard...',
+        '[SIM] IVA event stream: sample anomaly flagged...',
+        '<span class="warn">[SIM] DEMO BREACH COMPLETE — VISUAL STATE ONLY</span>'
+      ];
+      let step = 0;
+      const timer = window.setInterval(() => {
+        if (step < events.length) {
+          log.insertAdjacentHTML('beforeend', '<div>' + events[step] + '</div>');
+          const value = Math.min(100, Math.round(((step + 1) / events.length) * 100));
+          progress.style.width = value + '%';
+          percent.textContent = value + '%';
+          status.textContent = value >= 100 ? 'SIMULATION COMPLETE' : 'RUNNING DEMO';
+          step++;
+          log.scrollTop = log.scrollHeight;
+        } else {
+          window.clearInterval(timer);
+          actions.hidden = false;
+          document.body.classList.add('hack-sim-mode');
+        }
+      }, 620);
+
+      function dismiss(restore) {
+        overlay.hidden = true;
+        badge.hidden = false;
+        if (restore) {
+          document.body.classList.remove('hack-sim-mode');
+          badge.hidden = true;
+        } else {
+          document.body.classList.add('hack-sim-mode');
+        }
+      }
+      enterBtn.addEventListener('click', () => dismiss(false));
+      restoreBtn.addEventListener('click', () => dismiss(true));
+    })();
+
+    renderCart();
+  </script>
+
+
+
+</body></html>
